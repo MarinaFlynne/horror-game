@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://by3soj5eheilt"]
+
+[ext_resource type="Texture2D" uid="uid://cs8adpr4t6fp2" path="res://Sprites/light.png" id="1_wxdox"]
+
+[node name="Flashlight" type="Node2D"]
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(256, 0)
+rotation = 1.5708
+texture = ExtResource("1_wxdox")

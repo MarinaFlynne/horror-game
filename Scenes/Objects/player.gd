@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export_group("Components")
 ## The move_comp scene that handles movement.
 @export var move_component: Node
+@export var flashlight_component: Node2D
 
 @export_group("Movement")
 @export var speed_states: Dictionary = {"walk": 200, "run": 500, "sneak": 50}
@@ -11,6 +12,8 @@ extends CharacterBody2D
 func _ready():
 	change_speed(default_speed)
 	
+func _process(delta):
+	rotate_flashlight_to_mouse()
 
 func _physics_process(delta):
 	var direction = get_input_direction()
@@ -32,3 +35,7 @@ func get_input_direction() -> Vector2:
 func change_speed(state: String):
 	var speed = speed_states[state]
 	move_component.speed = speed
+	
+## TEMPORARY FUNCTION. FIX AND IMPROVE THIS
+func rotate_flashlight_to_mouse():
+	flashlight_component.look_at(get_global_mouse_position())
