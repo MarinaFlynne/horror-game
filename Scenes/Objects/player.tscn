@@ -20,3 +20,5 @@ position = Vector2(20, 20)
 shape = SubResource("RectangleShape2D_6citr")
 
 [node name="MoveComp" parent="." instance=ExtResource("2_ghkdg")]
+friction = 0.2
+acceleration = 0.3

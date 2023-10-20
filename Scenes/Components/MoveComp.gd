@@ -5,12 +5,13 @@ extends Node
 ## It can enable and disable movement and move the body.
 
 ## The maximum speed of the body.
-@export var speed: float = 200
+@export var default_speed: float = 200
 ## The friction coefficient for slowing down.
 @export var friction: float = 0.01
 ## The acceleration coefficient.
-@export var acceleration: float = 0.1
+@export var acceleration: float = 0.5
 
+var speed: float
 ## This is true if movement is allowed, false if not.
 ## Use enable_movement() or disable_movement() to set this.
 var _is_movement_enabled: bool = true
@@ -23,7 +24,7 @@ signal movement_disabled()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	speed = default_speed
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -34,16 +35,12 @@ func _process(delta):
 ## body - the body to move. [br] 
 ## direction - the direction to move in.
 func move(body: CharacterBody2D, direction: Vector2):
-	var velocity = body.velocity
 	# Accelerate or deccelerate the player
 	if direction.length() > 0:
-		velocity = velocity.lerp(direction.normalized() * speed, acceleration)
+		body.velocity = body.velocity.lerp(direction.normalized() * speed, acceleration)
 	else:
-		velocity = velocity.lerp(Vector2.ZERO, friction)
+		body.velocity = body.velocity.lerp(Vector2.ZERO, friction)
 	body.move_and_slide()
-	prints(body, "moved direction =", direction, "\nvelocity =", velocity)
-	
-
 
 func enable_movement():
 	_is_movement_enabled = true

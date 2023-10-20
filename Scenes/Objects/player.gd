@@ -1,13 +1,16 @@
 extends CharacterBody2D
 
+@export_group("Components")
+## The move_comp scene that handles movement.
 @export var move_component: Node
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+@export_group("Movement")
+@export var speed_states: Dictionary = {"walk": 200, "run": 500, "sneak": 50}
+@export var default_speed = "walk"
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
+func _ready():
+	change_speed(default_speed)
+	
 
 func _physics_process(delta):
 	var direction = get_input_direction()
@@ -25,3 +28,7 @@ func get_input_direction() -> Vector2:
 	if Input.is_action_pressed("move_down"):
 		input_direction.y += 1
 	return input_direction
+	
+func change_speed(state: String):
+	var speed = speed_states[state]
+	move_component.speed = speed
