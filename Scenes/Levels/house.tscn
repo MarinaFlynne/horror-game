@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://biwu8p6orq1l2"]
+[gd_scene load_steps=9 format=3 uid="uid://biwu8p6orq1l2"]
 
 [ext_resource type="TileSet" uid="uid://bajxsjdwktt1w" path="res://Tilesets/Main_tileset.tres" id="1_2kcli"]
 [ext_resource type="PackedScene" uid="uid://doobbtyrtvmsm" path="res://Scenes/Components/teleport_marker.tscn" id="3_o8w2b"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://kf163jvn2om" path="res://Sprites/Objects/chair.png" id="4_7nt84"]
 [ext_resource type="Texture2D" uid="uid://f8vhnj8s4yk3" path="res://Sprites/Objects/table.png" id="5_ocn3o"]
 [ext_resource type="Texture2D" uid="uid://b00vbvlklv5f5" path="res://Sprites/Objects/plant.png" id="6_wh48i"]
+[ext_resource type="Texture2D" uid="uid://bf47c60qq4d2k" path="res://Sprites/Objects/big_table.png" id="7_g3fhf"]
 
 [node name="House" type="Node2D"]
 
@@ -61,19 +62,31 @@ position = Vector2(-141, 180)
 [node name="Objects" type="Node" parent="."]
 
 [node name="Chair1" type="Sprite2D" parent="Objects"]
-position = Vector2(254, 15.5)
+position = Vector2(92, 31)
 texture = ExtResource("4_7nt84")
 
 [node name="Chair2" type="Sprite2D" parent="Objects"]
-position = Vector2(226, 15.5)
+position = Vector2(73, 37)
+texture = ExtResource("4_7nt84")
+
+[node name="Chair3" type="Sprite2D" parent="Objects"]
+position = Vector2(52, 37)
 texture = ExtResource("4_7nt84")
 
 [node name="Table" type="Sprite2D" parent="Objects"]
-position = Vector2(239, 28.5)
+position = Vector2(225, 4)
 texture = ExtResource("5_ocn3o")
 
 [node name="Plant" type="Sprite2D" parent="Objects"]
-position = Vector2(239, 17.5)
+position = Vector2(225, -7)
+texture = ExtResource("6_wh48i")
+
+[node name="BigTable" type="Sprite2D" parent="Objects"]
+position = Vector2(72, 54)
+texture = ExtResource("7_g3fhf")
+
+[node name="Plant2" type="Sprite2D" parent="Objects"]
+position = Vector2(72, 43)
 texture = ExtResource("6_wh48i")
 
 [node name="Player" parent="." instance=ExtResource("3_ydwqn")]

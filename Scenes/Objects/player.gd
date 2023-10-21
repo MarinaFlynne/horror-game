@@ -58,5 +58,5 @@ func teleport_to(teleport_position):
 	camera_component.position_smoothing_enabled = false 
 	move_component.teleport_to(self, teleport_position)
 	# Wait until the object has fully teleported to reset camera smoothing.
-	await move_component.teleported
+	await get_tree().create_timer(0.001).timeout
 	camera_component.position_smoothing_enabled = original_smoothing_val
