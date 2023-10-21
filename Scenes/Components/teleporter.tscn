@@ -6,6 +6,7 @@
 
 [node name="Teleporter" type="Area2D"]
 collision_layer = 0
+collision_mask = 2
 script = ExtResource("1_8x73i")
 
 [node name="TeleportRegion" type="CollisionShape2D" parent="."]

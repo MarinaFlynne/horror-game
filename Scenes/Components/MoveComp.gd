@@ -20,6 +20,8 @@ var _is_movement_enabled: bool = true
 signal movement_enabled()
 ## Emits when movement gets disabled.
 signal movement_disabled()
+## Emits when a body has finished teleporting
+signal teleported()
 
 
 # Called when the node enters the scene tree for the first time.
@@ -52,3 +54,5 @@ func disable_movement():
 	
 func teleport_to(body: CharacterBody2D, teleport_position: Vector2):
 	body.global_position = teleport_position
+	teleported.emit()
+	

@@ -16,8 +16,7 @@ func _process(_delta):
 	pass
 	
 func _on_body_entered(body):
+	# Teleport the body, if teleportation is enabled
 	if enabled:
-		print(body)
 		var teleport_point = teleport_marker.global_position
-		print(teleport_point)
 		body.teleport_to(teleport_point)
