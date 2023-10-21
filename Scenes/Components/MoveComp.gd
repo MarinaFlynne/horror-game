@@ -27,7 +27,7 @@ func _ready():
 	speed = default_speed
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 ## Move the body according to the speed, acceleration, and friction values. [br]
@@ -49,3 +49,6 @@ func enable_movement():
 func disable_movement():
 	_is_movement_enabled = false
 	movement_disabled.emit()
+	
+func teleport_to(body: CharacterBody2D, teleport_position: Vector2):
+	body.global_position = teleport_position

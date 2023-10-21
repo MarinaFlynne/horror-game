@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bgoe34rfdqmh7"]
+
+[node name="DarknessComp" type="CanvasModulate"]
+visible = false
+color = Color(0, 0, 0, 1)

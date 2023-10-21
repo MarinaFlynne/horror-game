@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5tksdh162br0"
-path="res://.godot/imported/OrangeFish3.png-26cad0ad4bece01d3a7610fd0200c6da.ctex"
+uid="uid://kf163jvn2om"
+path="res://.godot/imported/chair.png-bff9f209d168e4fa7fa2b1c10681b349.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/OrangeFish3.png"
-dest_files=["res://.godot/imported/OrangeFish3.png-26cad0ad4bece01d3a7610fd0200c6da.ctex"]
+source_file="res://Sprites/Objects/chair.png"
+dest_files=["res://.godot/imported/chair.png-bff9f209d168e4fa7fa2b1c10681b349.ctex"]
 
 [params]
 

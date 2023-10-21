@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://by3soj5eheilt" path="res://Scenes/Objects/flashlight.tscn" id="3_mglm8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6citr"]
-size = Vector2(40, 40)
+size = Vector2(15, 15)
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("move_component", "flashlight_component")]
 script = ExtResource("1_30b6g")
@@ -15,10 +15,11 @@ flashlight_component = NodePath("Flashlight")
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
+scale = Vector2(0.380885, 0.380885)
 color = Color(0.498039, 0.580392, 0.992157, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(20, 20)
+position = Vector2(7.5, 7.5)
 shape = SubResource("RectangleShape2D_6citr")
 
 [node name="MoveComp" parent="." instance=ExtResource("2_ghkdg")]
@@ -31,4 +32,5 @@ zoom = Vector2(3, 3)
 position_smoothing_enabled = true
 
 [node name="Flashlight" parent="." instance=ExtResource("3_mglm8")]
+visible = false
 position = Vector2(20, 20)
