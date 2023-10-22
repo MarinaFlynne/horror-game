@@ -25,6 +25,8 @@ func _process(_delta):
 		flashlight_component.enable_light()
 	elif light_enabled == false:
 		flashlight_component.disable_light()
+	if Input.is_action_just_pressed("interact"):
+		print(interact_component.get_closest_interactable())
 
 func _physics_process(_delta):
 	var direction = get_input_direction()
@@ -69,13 +71,21 @@ func teleport_to(teleport_position):
 	# Disable camera smoothing, so that the camera teleports instead of panning over.
 	# Store the original smoothing val so that we can reset it to its 
 	# original value afterwards (just in case smoothing was disabled for some reason).
+	var original_cam_pos = camera_component.position
 	var original_smoothing_val: bool = camera_component.position_smoothing_enabled
 	camera_component.position_smoothing_enabled = false 
 	move_component.teleport_to(self, teleport_position)
 	# Wait until the object has fully teleported to reset camera smoothing.
 	await get_tree().create_timer(0.001).timeout
 	camera_component.position_smoothing_enabled = original_smoothing_val
+	camera_component.position = original_cam_pos
 
 func _on_teleporter_entered(body, teleport_pos):
 	if body == self:
 		teleport_to(teleport_pos)
+
+func _on_interact_comp_interactable_in_reach():
+	print("INTERACTABLE IN REACH")
+
+func _on_interact_comp_interactables_out_of_reach():
+	print("INTERACTABLE OUT OF REACH")

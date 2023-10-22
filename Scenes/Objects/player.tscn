@@ -60,3 +60,6 @@ color = Color(0.498039, 0.580392, 0.992157, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_6citr")
+
+[connection signal="interactable_in_reach" from="InteractComp" to="." method="_on_interact_comp_interactable_in_reach"]
+[connection signal="interactables_out_of_reach" from="InteractComp" to="." method="_on_interact_comp_interactables_out_of_reach"]

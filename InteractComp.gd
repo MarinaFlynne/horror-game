@@ -24,23 +24,25 @@ func _process(delta):
 	pass
 		
 ## Takes a list of interactable objects and returns the closest one to the player
-func get_closest_interactable(interactables: Array[Area2D]) -> Area2D:
+func get_closest_interactable() -> Area2D:
+	# Array of all areas overlapping with the interaction area (that it masks)
+	var interactables = interaction_area.get_overlapping_areas()
 	assert(!interactables.is_empty(), "ERROR: Interactables list cannot be empty.")
 	if interactables.size() == 1:
 		return interactables[0]
 	# Iterate through all interactables to find the one that is closest to the player.
-	var player_pos = player_center.position
+	var player_pos = player_center.global_position
 	var closest_interactable = interactables[0]
-	var smallest_distance = player_pos.distance_to(interactables[0].position)
+	var smallest_distance = player_pos.distance_to(interactables[0].global_position)
 	for interactable in interactables:
-		var distance_to_player = player_pos.distance_to(interactable.position)
+		var distance_to_player = player_pos.distance_to(interactable.global_position)
 		if distance_to_player <=smallest_distance:
 			smallest_distance = distance_to_player
 			closest_interactable = interactable
 	# Now closest_interactable is the closest interactable to the player.
 	return closest_interactable
 		
-func interaction_update():
+func interaction_update(area: Area2D):
 	if is_interaction_enabled:
 		# Array of all areas overlapping with the interaction area (that it masks)
 		var interactables_within_reach = interaction_area.get_overlapping_areas()
