@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2fcgdlk7t8wq"]
+
+[ext_resource type="Texture2D" uid="uid://b00vbvlklv5f5" path="res://Sprites/Objects/plant.png" id="1_lbfcm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i5gti"]
+size = Vector2(8, 16)
+
+[node name="InteractableObject" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_i5gti")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lbfcm")
