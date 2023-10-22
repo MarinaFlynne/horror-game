@@ -7,6 +7,8 @@ extends Area2D
 
 var teleport_to_marker: Marker2D 
 
+signal entered_teleporter(body, teleport_point)
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	assert(teleport_marker != null, "ERROR: You must connect a teleport marker.")
@@ -19,4 +21,5 @@ func _on_body_entered(body):
 	# Teleport the body, if teleportation is enabled
 	if enabled:
 		var teleport_point = teleport_marker.global_position
-		body.teleport_to(teleport_point)
+#		body.teleport_to(teleport_point)
+		entered_teleporter.emit(body,teleport_point)

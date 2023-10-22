@@ -4,7 +4,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hcy4q"]
 
-[node name="Teleporter" type="Area2D"]
+[node name="Teleporter" type="Area2D" groups=["teleporters"]]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_8x73i")

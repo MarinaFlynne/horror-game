@@ -3,9 +3,10 @@ extends CharacterBody2D
 @export_group("Components")
 ## The move_comp scene that handles movement.
 @export var move_component: Node
-@export var flashlight_component: Node2D
-@export var camera_component: Camera2D
 @export var direction_component: Node2D
+@export var interact_component: Node
+@export var camera_component: Camera2D
+@export var flashlight_component: Node2D
 
 @export_group("Movement")
 @export var speed_states: Dictionary = {"walk": 200, "run": 500, "sneak": 50}
@@ -16,6 +17,7 @@ extends CharacterBody2D
 
 func _ready():
 	change_speed(default_speed)
+	initialize_teleporters()
 	
 func _process(_delta):
 	rotate_flashlight_to_mouse()
@@ -31,6 +33,13 @@ func _physics_process(_delta):
 		direction_component.change_direction_cardinal(direction)
 	# Move the character
 	move_component.move(self, direction)
+
+func initialize_teleporters():
+	# Get all teleporters in scene
+	var teleporters = get_tree().get_nodes_in_group('teleporters')
+	# Connect the teleporter entered signal to the function _on_teleporter_entered
+	for teleporter in teleporters:
+		teleporter.entered_teleporter.connect(_on_teleporter_entered)
 
 ## Returns a Vector2 representing the direction the user is pressing.
 func get_input_direction() -> Vector2:
@@ -66,3 +75,7 @@ func teleport_to(teleport_position):
 	# Wait until the object has fully teleported to reset camera smoothing.
 	await get_tree().create_timer(0.001).timeout
 	camera_component.position_smoothing_enabled = original_smoothing_val
+
+func _on_teleporter_entered(body, teleport_pos):
+	if body == self:
+		teleport_to(teleport_pos)
