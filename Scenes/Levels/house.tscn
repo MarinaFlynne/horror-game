@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://biwu8p6orq1l2"]
+[gd_scene load_steps=10 format=3 uid="uid://biwu8p6orq1l2"]
 
 [ext_resource type="TileSet" uid="uid://bajxsjdwktt1w" path="res://Tilesets/Main_tileset.tres" id="1_2kcli"]
 [ext_resource type="PackedScene" uid="uid://doobbtyrtvmsm" path="res://Scenes/Components/teleport_marker.tscn" id="3_o8w2b"]
@@ -9,10 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://b00vbvlklv5f5" path="res://Sprites/Objects/plant.png" id="6_wh48i"]
 [ext_resource type="Texture2D" uid="uid://bf47c60qq4d2k" path="res://Sprites/Objects/big_table.png" id="7_g3fhf"]
 [ext_resource type="PackedScene" uid="uid://d2fcgdlk7t8wq" path="res://Scenes/Objects/interactable_object.tscn" id="9_tus1t"]
-[ext_resource type="FontFile" uid="uid://dgett6l8rj4vm" path="res://Fonts/PixNull.ttf" id="10_n322w"]
-
-[sub_resource type="Theme" id="Theme_w25w0"]
-default_font = ExtResource("10_n322w")
 
 [node name="House" type="Node2D"]
 
@@ -108,13 +104,3 @@ position = Vector2(128, -164)
 
 [node name="InteractableObject2" parent="." instance=ExtResource("9_tus1t")]
 position = Vector2(149, -164)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
-custom_minimum_size = Vector2(1152, 200)
-offset_top = 448.0
-offset_right = 1152.0
-offset_bottom = 648.0
-theme = SubResource("Theme_w25w0")
-text = "Hello there! I'm a plant"

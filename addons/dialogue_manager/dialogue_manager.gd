@@ -205,7 +205,6 @@ func show_example_dialogue_balloon(resource: DialogueResource, title: String = "
 	get_tree().current_scene.add_child(balloon)
 	balloon.start(resource, title, extra_game_states)
 
-
 ### Dotnet bridge
 
 

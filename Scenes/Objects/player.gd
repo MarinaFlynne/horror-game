@@ -19,6 +19,7 @@ func _ready():
 	change_speed(default_speed)
 	initialize_teleporters()
 	
+	
 func _process(_delta):
 	rotate_flashlight_to_mouse()
 	if light_enabled == true:
@@ -27,6 +28,7 @@ func _process(_delta):
 		flashlight_component.disable_light()
 	if Input.is_action_just_pressed("interact"):
 		print(interact_component.get_closest_interactable())
+		GameManager.show_dialogue(load("res://Dialogue/dialogue_test.dialogue"), "Test")
 
 func _physics_process(_delta):
 	var direction = get_input_direction()
@@ -89,3 +91,4 @@ func _on_interact_comp_interactable_in_reach():
 
 func _on_interact_comp_interactables_out_of_reach():
 	print("INTERACTABLE OUT OF REACH")
+

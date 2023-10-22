@@ -1,11 +1,11 @@
 extends ColorRect
 
 @export_file() var dialog_path
-@export var textSpeed: float = 0.05
+@export var text_speed: float = 0.05
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$Timer.wait_time = textSpeed
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
