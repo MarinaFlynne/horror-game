@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var move_component: Node
 @export var flashlight_component: Node2D
 @export var camera_component: Camera2D
+@export var direction_component: Node2D
 
 @export_group("Movement")
 @export var speed_states: Dictionary = {"walk": 200, "run": 500, "sneak": 50}
@@ -25,6 +26,10 @@ func _process(_delta):
 
 func _physics_process(_delta):
 	var direction = get_input_direction()
+	# If the direction vector is not zero, change the direction our character is facing
+	if direction != Vector2.ZERO:
+		direction_component.change_direction_cardinal(direction)
+	# Move the character
 	move_component.move(self, direction)
 
 ## Returns a Vector2 representing the direction the user is pressing.
@@ -45,6 +50,7 @@ func change_speed(state: String):
 	var speed = speed_states[state]
 	move_component.speed = speed
 	
+
 ## TEMPORARY FUNCTION. FIX AND IMPROVE THIS
 func rotate_flashlight_to_mouse():
 	flashlight_component.look_at(get_global_mouse_position())

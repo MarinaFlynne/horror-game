@@ -1,26 +1,30 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7x1rppynxtu3"]
+[gd_scene load_steps=7 format=3 uid="uid://b7x1rppynxtu3"]
 
 [ext_resource type="Script" path="res://Scenes/Objects/player.gd" id="1_30b6g"]
 [ext_resource type="PackedScene" uid="uid://c0tw5xb2lvcqc" path="res://Scenes/Components/move_comp.tscn" id="2_ghkdg"]
 [ext_resource type="PackedScene" uid="uid://by3soj5eheilt" path="res://Scenes/Objects/flashlight.tscn" id="3_mglm8"]
+[ext_resource type="PackedScene" uid="uid://4isqcoyrktjq" path="res://Scenes/Components/direction_comp.tscn" id="4_nuf2b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6citr"]
-size = Vector2(15, 15)
+size = Vector2(16, 16)
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("move_component", "flashlight_component", "camera_component")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4hnc8"]
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("move_component", "flashlight_component", "camera_component", "direction_component")]
 script = ExtResource("1_30b6g")
 move_component = NodePath("MoveComp")
 flashlight_component = NodePath("Flashlight")
 camera_component = NodePath("Camera2D")
+direction_component = NodePath("DirectionComp")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
-scale = Vector2(0.380885, 0.380885)
+scale = Vector2(0.4, 0.4)
 color = Color(0.498039, 0.580392, 0.992157, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(7.5, 7.5)
+position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_6citr")
 
 [node name="MoveComp" parent="." instance=ExtResource("2_ghkdg")]
@@ -28,10 +32,22 @@ friction = 0.2
 acceleration = 0.3
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(20, 20)
+position = Vector2(8, 8)
 zoom = Vector2(3, 3)
 position_smoothing_enabled = true
 
 [node name="Flashlight" parent="." instance=ExtResource("3_mglm8")]
 visible = false
 position = Vector2(20, 20)
+
+[node name="DirectionComp" parent="." instance=ExtResource("4_nuf2b")]
+
+[node name="DirectionMarker" type="Marker2D" parent="DirectionComp"]
+position = Vector2(19, 0)
+
+[node name="InteractableArea" type="Area2D" parent="DirectionComp/DirectionMarker"]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DirectionComp/DirectionMarker/InteractableArea"]
+shape = SubResource("RectangleShape2D_4hnc8")
