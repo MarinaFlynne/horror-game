@@ -222,14 +222,6 @@ func show_example_dialogue_balloon(resource: DialogueResource, title: String = "
 	get_current_scene.call().add_child(balloon)
 	balloon.start(resource, title, extra_game_states)
 
-## Show my dialogue balloon
-func show_dialogue(resource: DialogueResource, title: String = "", extra_game_states: Array = []) -> void:
-	var dialogue_balloon = load("res://Dialogue/Balloons/balloon.tscn")
-
-	var balloon: Node = dialogue_balloon.instantiate()
-	get_current_scene.call().add_child(balloon)
-	balloon.start(resource, title, extra_game_states)
-
 ### Dotnet bridge
 
 

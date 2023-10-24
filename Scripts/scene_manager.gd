@@ -57,3 +57,7 @@ func GetSceneCount() -> int:
 # Description: Returns the alias of the current scene
 func GetCurrentSceneAlias() -> String:
 	return m_CurrentSceneAlias
+
+func GetCurrentScene():
+	var scene_alias = GetCurrentSceneAlias()
+	return Scenes[scene_alias]

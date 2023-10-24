@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bd54krilmdxxy"]
 
-[ext_resource type="Script" path="res://InteractComp.gd" id="1_55t7x"]
+[ext_resource type="Script" path="res://Scenes/Components/InteractComp.gd" id="1_fxsb1"]
 
 [node name="InteractComp" type="Node"]
-script = ExtResource("1_55t7x")
+script = ExtResource("1_fxsb1")
