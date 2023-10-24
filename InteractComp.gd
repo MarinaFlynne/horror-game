@@ -9,6 +9,7 @@ extends Node
 
 #var is_interactable_within_reach: bool = false
 
+var is_interactable_in_reach:bool = false
 
 signal interactable_in_reach()
 signal interactables_out_of_reach()
@@ -48,5 +49,8 @@ func interaction_update(area: Area2D):
 		var interactables_within_reach = interaction_area.get_overlapping_areas()
 		if not interactables_within_reach.is_empty():
 			interactable_in_reach.emit()
+			is_interactable_in_reach = true
 		else:
 			interactables_out_of_reach.emit()
+			is_interactable_in_reach = false
+	return false

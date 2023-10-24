@@ -1,7 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://n0mduphjfo56"]
+[gd_scene load_steps=2 format=3 uid="uid://bnx10l8qq66q1"]
 
-[ext_resource type="Script" path="res://GameManager.gd" id="1_ifrtv"]
+[ext_resource type="Script" path="res://GameManager.gd" id="1_kwrqw"]
 
 [node name="GameManager" type="Node"]
-script = ExtResource("1_ifrtv")
-default_balloon_path = "res://Dialogue/Balloons/balloon.tscn"
+script = ExtResource("1_kwrqw")

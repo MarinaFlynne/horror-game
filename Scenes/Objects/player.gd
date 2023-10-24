@@ -18,17 +18,16 @@ extends CharacterBody2D
 func _ready():
 	change_speed(default_speed)
 	initialize_teleporters()
+	if light_enabled:
+		flashlight_component.enable_light()
+	else:
+		flashlight_component.disable_light()
 	
 	
 func _process(_delta):
-	rotate_flashlight_to_mouse()
-	if light_enabled == true:
-		flashlight_component.enable_light()
-	elif light_enabled == false:
-		flashlight_component.disable_light()
-	if Input.is_action_just_pressed("interact"):
-		print(interact_component.get_closest_interactable())
-		GameManager.show_dialogue(load("res://Dialogue/dialogue_test.dialogue"), "Test")
+	if light_enabled:
+		rotate_flashlight_to_mouse()
+	process_input()
 
 func _physics_process(_delta):
 	var direction = get_input_direction()
@@ -37,6 +36,12 @@ func _physics_process(_delta):
 		direction_component.change_direction_cardinal(direction)
 	# Move the character
 	move_component.move(self, direction)
+
+func process_input():
+	if Input.is_action_just_pressed("interact") and interact_component.is_interactable_in_reach:
+		print(interact_component.get_closest_interactable())
+		var dialogue_resource = load("res://Dialogue/dialogue_test.dialogue")
+		DialogueManager.show_dialogue(dialogue_resource, "Test")
 
 func initialize_teleporters():
 	# Get all teleporters in scene

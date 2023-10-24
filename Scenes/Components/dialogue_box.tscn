@@ -6,7 +6,6 @@
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_dsdn7")
-textSpeed = null
 
 [node name="Name" type="RichTextLabel" parent="."]
 layout_mode = 0
