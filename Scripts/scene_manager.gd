@@ -33,8 +33,9 @@ func RemoveScene(sceneAlias : String) -> void:
 # Description: Switch to the requested scene based on its alias
 # Parameter sceneAlias: The scene alias of the scene to switch to
 func SwitchScene(sceneAlias : String, fade = true) -> void:
-	var fadeNode = get_node(fadePath)
+	var fadeNode 
 	if fade:
+		fadeNode = get_node(fadePath)
 		fadeNode.play("Fade")
 		await fadeNode.animation_finished
 	get_tree().change_scene_to_file(Scenes[sceneAlias])
@@ -58,6 +59,7 @@ func GetSceneCount() -> int:
 func GetCurrentSceneAlias() -> String:
 	return m_CurrentSceneAlias
 
-func GetCurrentScene():
-	var scene_alias = GetCurrentSceneAlias()
-	return Scenes[scene_alias]
+func get_current_scene():
+	return get_tree().current_scene
+#	var scene_alias = GetCurrentSceneAlias()
+#	return Scenes[scene_alias]

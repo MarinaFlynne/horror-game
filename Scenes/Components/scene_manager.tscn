@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtblho8r2fexk"]
+
+[ext_resource type="Script" path="res://Scripts/scene_manager.gd" id="1_7qkxw"]
+
+[node name="SceneManager" type="Node"]
+script = ExtResource("1_7qkxw")
+Scenes = {
+"house": &"res://Scenes/Levels/house.tscn"
+}

@@ -1,12 +1,18 @@
-~ Test
+~ Plant
 
-You: This is a plant.
-Plant: what is your favourite colour?
-- Red
-	Plant: grrr bad colour
-- Blue
-	Plant: nice-ish colour i guess..
-- Aquamarine
-	Plant: THE BEST COLOUR
-Plant: mrow
+Plant: Hello, I am a humble little plant.
+Plant: I have an important question for you...
+Plant: Who is the cutest kitty of all time?
+- Lore
+	Plant: CORRECT SHE IS THE CUTEST EVER :P
+	Plant: Mrow mrow mrew mrow mreowww
+- Mina
+	Plant: wrong
+- Tiggy
+	Plant: yknow what fine. tiggy is tied for first with lore.
+=> END
+
+~ Plant2
+
+You: This is a boring plant.
 => END

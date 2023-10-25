@@ -38,11 +38,12 @@ func _process(_delta):
 ## direction - the direction to move in.
 func move(body: CharacterBody2D, direction: Vector2):
 	# Accelerate or deccelerate the player
-	if direction.length() > 0:
-		body.velocity = body.velocity.lerp(direction.normalized() * speed, acceleration)
-	else:
-		body.velocity = body.velocity.lerp(Vector2.ZERO, friction)
-	body.move_and_slide()
+	if _is_movement_enabled:
+		if direction.length() > 0:
+			body.velocity = body.velocity.lerp(direction.normalized() * speed, acceleration)
+		else:
+			body.velocity = body.velocity.lerp(Vector2.ZERO, friction)
+		body.move_and_slide()
 
 func enable_movement():
 	_is_movement_enabled = true

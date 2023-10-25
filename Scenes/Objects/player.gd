@@ -15,14 +15,14 @@ extends CharacterBody2D
 @export_group("Light")
 @export var light_enabled: bool = false
 
+@export var dialogue_resource = preload("res://Dialogue/main_dialogue.dialogue")
+
 func _ready():
+	GameManager.dialogue_started.connect(disable_movement)
+	GameManager.dialogue_ended.connect(enable_movement)
 	change_speed(default_speed)
 	initialize_teleporters()
-	if light_enabled:
-		flashlight_component.enable_light()
-	else:
-		flashlight_component.disable_light()
-	
+	initialize_light()
 	
 func _process(_delta):
 	if light_enabled:
@@ -37,11 +37,16 @@ func _physics_process(_delta):
 	# Move the character
 	move_component.move(self, direction)
 
+func initialize_light():
+	if light_enabled:
+		flashlight_component.enable_light()
+	else:
+		flashlight_component.disable_light()
+
 func process_input():
 	if Input.is_action_just_pressed("interact") and interact_component.is_interactable_in_reach:
-		print(interact_component.get_closest_interactable())
-		var dialogue_resource = load("res://Dialogue/dialogue_test.dialogue")
-		DialogueManager.show_dialogue(dialogue_resource, "Test")
+		var closest_interactable = interact_component.get_closest_interactable()
+		GameManager.show_dialogue(dialogue_resource, closest_interactable.dialogue_name)
 
 func initialize_teleporters():
 	# Get all teleporters in scene
@@ -92,8 +97,16 @@ func _on_teleporter_entered(body, teleport_pos):
 		teleport_to(teleport_pos)
 
 func _on_interact_comp_interactable_in_reach():
-	print("INTERACTABLE IN REACH")
+#	print("INTERACTABLE IN REACH")
+	pass
 
 func _on_interact_comp_interactables_out_of_reach():
-	print("INTERACTABLE OUT OF REACH")
+#	print("INTERACTABLE OUT OF REACH")
+	pass
+	
+func enable_movement():
+	move_component.enable_movement()
+
+func disable_movement():
+	move_component.disable_movement()
 

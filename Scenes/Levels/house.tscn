@@ -108,6 +108,8 @@ speed_states = {
 
 [node name="InteractableObject" parent="." instance=ExtResource("9_tus1t")]
 position = Vector2(128, -164)
+dialogue_name = "Plant2"
 
 [node name="InteractableObject2" parent="." instance=ExtResource("9_tus1t")]
-position = Vector2(149, -164)
+position = Vector2(663, -162)
+dialogue_name = "Plant"
