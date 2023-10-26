@@ -15,6 +15,7 @@ extends CharacterBody2D
 @export_group("Light")
 @export var light_enabled: bool = false
 
+@export_group("Dialogue")
 @export var dialogue_resource = preload("res://Dialogue/main_dialogue.dialogue")
 
 func _ready():

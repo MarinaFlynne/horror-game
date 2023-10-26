@@ -18,6 +18,11 @@ direction_component = NodePath("DirectionComp")
 interact_component = NodePath("InteractComp")
 camera_component = NodePath("Camera2D")
 flashlight_component = NodePath("Flashlight")
+speed_states = {
+"run": 100,
+"sneak": 50,
+"walk": 80
+}
 
 [node name="CenterMarker" type="Node2D" parent="."]
 

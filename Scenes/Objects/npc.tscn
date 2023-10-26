@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bihcxqprt4bgh"]
+
+[ext_resource type="PackedScene" uid="uid://d2fcgdlk7t8wq" path="res://Scenes/Objects/interactable_object.tscn" id="1_smmv3"]
+
+[node name="NPC" instance=ExtResource("1_smmv3")]
+dialogue_name = "Aza"
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(10, 10)
+
+[node name="ColorRect" type="ColorRect" parent="." index="2"]
+offset_right = 20.0
+offset_bottom = 20.0
+color = Color(0.772549, 0.486275, 0.211765, 1)
