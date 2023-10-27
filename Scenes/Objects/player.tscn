@@ -1,23 +1,157 @@
-[gd_scene load_steps=8 format=3 uid="uid://b7x1rppynxtu3"]
+[gd_scene load_steps=27 format=3 uid="uid://b7x1rppynxtu3"]
 
 [ext_resource type="Script" path="res://Scenes/Objects/player.gd" id="1_30b6g"]
 [ext_resource type="PackedScene" uid="uid://c0tw5xb2lvcqc" path="res://Scenes/Components/move_comp.tscn" id="2_ghkdg"]
 [ext_resource type="PackedScene" uid="uid://by3soj5eheilt" path="res://Scenes/Objects/flashlight.tscn" id="3_mglm8"]
 [ext_resource type="PackedScene" uid="uid://bd54krilmdxxy" path="res://Scenes/Components/interact_comp.tscn" id="4_1isqx"]
 [ext_resource type="PackedScene" uid="uid://4isqcoyrktjq" path="res://Scenes/Components/direction_comp.tscn" id="4_nuf2b"]
+[ext_resource type="Texture2D" uid="uid://brepnbua4md0i" path="res://Sprites/Characters/Aza/AzaFrontIdle.png" id="6_oyrku"]
+[ext_resource type="Texture2D" uid="uid://53o11872vc2b" path="res://Sprites/Characters/Aza/AzaLeftIdle.png" id="7_tamuo"]
+[ext_resource type="Texture2D" uid="uid://4yytnvyhavx2" path="res://Sprites/Characters/Aza/AzaRightIdle.png" id="8_2xn31"]
+[ext_resource type="Texture2D" uid="uid://da5e5ry1l2hmc" path="res://Sprites/Characters/Aza/AzaBackIdle.png" id="9_lbyi7"]
+[ext_resource type="Texture2D" uid="uid://bk7v463rx3nmb" path="res://Sprites/Characters/Aza/AzaFrontWalk.png" id="10_gi0fy"]
+[ext_resource type="Texture2D" uid="uid://d4eq1bphrrd20" path="res://Sprites/Characters/Aza/AzaLeftWalk.png" id="11_vv4wj"]
+[ext_resource type="Texture2D" uid="uid://7wbwihvegfwp" path="res://Sprites/Characters/Aza/AzaRightWalk.png" id="12_t73gj"]
+[ext_resource type="Texture2D" uid="uid://dponlox6cdpht" path="res://Sprites/Characters/Aza/AzaBackWalk.png" id="13_5xi4f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4hnc8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6citr"]
-size = Vector2(14, 14)
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fbbx"]
+atlas = ExtResource("10_gi0fy")
+region = Rect2(0, 0, 19, 33)
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("move_component", "direction_component", "interact_component", "camera_component", "flashlight_component")]
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4wt7"]
+atlas = ExtResource("10_gi0fy")
+region = Rect2(20, 0, 19, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hjko"]
+atlas = ExtResource("11_vv4wj")
+region = Rect2(0, 0, 19, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvan8"]
+atlas = ExtResource("11_vv4wj")
+region = Rect2(20, 0, 19, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fy80g"]
+atlas = ExtResource("11_vv4wj")
+region = Rect2(40, 0, 19, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fn8re"]
+atlas = ExtResource("12_t73gj")
+region = Rect2(0, 0, 19, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nplm"]
+atlas = ExtResource("12_t73gj")
+region = Rect2(20, 0, 19, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jaqi"]
+atlas = ExtResource("12_t73gj")
+region = Rect2(40, 0, 19, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_di2fe"]
+atlas = ExtResource("13_5xi4f")
+region = Rect2(0, 0, 19, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pfb6m"]
+atlas = ExtResource("13_5xi4f")
+region = Rect2(20, 0, 19, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b3sec"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_oyrku")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_tamuo")
+}],
+"loop": true,
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_2xn31")
+}],
+"loop": true,
+"name": &"idle_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_lbyi7")
+}],
+"loop": true,
+"name": &"idle_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7fbbx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4wt7")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4hjko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jvan8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fy80g")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fn8re")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2nplm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jaqi")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_di2fe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pfb6m")
+}],
+"loop": true,
+"name": &"walk_up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6citr"]
+size = Vector2(11, 15)
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("move_component", "direction_component", "interact_component", "camera_component", "flashlight_component", "animation_component")]
 script = ExtResource("1_30b6g")
 move_component = NodePath("MoveComp")
 direction_component = NodePath("DirectionComp")
 interact_component = NodePath("InteractComp")
 camera_component = NodePath("Camera2D")
 flashlight_component = NodePath("Flashlight")
+animation_component = NodePath("CharacterAnimation")
 speed_states = {
 "run": 100,
 "sneak": 50,
@@ -56,15 +190,23 @@ position_smoothing_enabled = true
 visible = false
 position = Vector2(20, 20)
 
+[node name="CharacterAnimation" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_b3sec")
+animation = &"idle_down"
+autoplay = "idle_down"
+
+[node name="PlayerCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 8.5)
+shape = SubResource("RectangleShape2D_6citr")
+
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_left = -7.0
 offset_top = -7.0
 offset_right = 7.0
 offset_bottom = 7.0
 color = Color(0.498039, 0.580392, 0.992157, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_6citr")
-
-[connection signal="interactable_in_reach" from="InteractComp" to="." method="_on_interact_comp_interactable_in_reach"]
-[connection signal="interactables_out_of_reach" from="InteractComp" to="." method="_on_interact_comp_interactables_out_of_reach"]
+[connection signal="idle_started" from="MoveComp" to="." method="_on_move_comp_idle_started"]
+[connection signal="movement_started" from="MoveComp" to="." method="_on_move_comp_movement_started"]
+[connection signal="direction_changed" from="DirectionComp" to="." method="_on_direction_comp_direction_changed"]

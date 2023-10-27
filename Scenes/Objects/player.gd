@@ -7,6 +7,7 @@ extends CharacterBody2D
 @export var interact_component: Node
 @export var camera_component: Camera2D
 @export var flashlight_component: Node2D
+@export var animation_component: AnimatedSprite2D
 
 @export_group("Movement")
 @export var speed_states: Dictionary = {"walk": 200, "run": 500, "sneak": 50}
@@ -18,7 +19,21 @@ extends CharacterBody2D
 @export_group("Dialogue")
 @export var dialogue_resource = preload("res://Dialogue/main_dialogue.dialogue")
 
+var down_anim: Dictionary = 	{"idle": "idle_down", "walk": "walk_down"}
+var left_anim: Dictionary = 	{"idle": "idle_left", "walk": "walk_left"}
+var right_anim: Dictionary = 	{"idle": "idle_right", "walk": "walk_right"}
+var up_anim: Dictionary = 		{"idle": "idle_up", "walk": "walk_up"}
+
+enum STATES {IDLE, WALK}
+var current_state = STATES.IDLE
+
+enum DIRECTIONS {UP, RIGHT, DOWN, LEFT}
+var current_direction = DIRECTIONS.DOWN
+
+var current_animation: Dictionary = down_anim
+
 func _ready():
+	animation_component.play()
 	GameManager.dialogue_started.connect(disable_movement)
 	GameManager.dialogue_ended.connect(enable_movement)
 	change_speed(default_speed)
@@ -96,14 +111,6 @@ func teleport_to(teleport_position):
 func _on_teleporter_entered(body, teleport_pos):
 	if body == self:
 		teleport_to(teleport_pos)
-
-func _on_interact_comp_interactable_in_reach():
-#	print("INTERACTABLE IN REACH")
-	pass
-
-func _on_interact_comp_interactables_out_of_reach():
-#	print("INTERACTABLE OUT OF REACH")
-	pass
 	
 func enable_movement():
 	move_component.enable_movement()
@@ -111,3 +118,39 @@ func enable_movement():
 func disable_movement():
 	move_component.disable_movement()
 
+func change_direction(direction_int: int):
+	current_direction = direction_int
+	match(current_direction):
+		DIRECTIONS.UP:
+			current_animation = up_anim
+		DIRECTIONS.RIGHT:
+			current_animation = right_anim
+		DIRECTIONS.DOWN:
+			current_animation = down_anim
+		DIRECTIONS.LEFT:
+			current_animation = left_anim
+	update_animation()
+
+func _on_direction_comp_direction_changed(direction_int: int):
+	change_direction(direction_int)
+			
+
+func update_animation():
+	if current_state == STATES.IDLE:
+		animation_component.animation = current_animation["idle"]
+	elif current_state == STATES.WALK:
+		animation_component.animation = current_animation["walk"]
+	else:
+		assert(false, "Player: Invalid animation state.")
+
+
+func _on_move_comp_idle_started():
+	print("idle")
+	current_state = STATES.IDLE
+	update_animation()
+
+
+func _on_move_comp_movement_started():
+	print("walk")
+	current_state = STATES.WALK
+	update_animation()

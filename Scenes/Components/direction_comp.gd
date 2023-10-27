@@ -12,15 +12,32 @@ const DEFAULT_DIRECTION = DOWN
 
 var current_direction = DEFAULT_DIRECTION
 
+enum DIRECTIONS {UP, RIGHT, DOWN, LEFT}
+signal direction_changed(direction_int)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	change_direction_cardinal(current_direction)
 
 ## Takes a direction and changes the current direction to either up, down, left, or right.
 func change_direction_cardinal(direction: Vector2):
+	var old_direction = current_direction
 	current_direction = get_current_cardinal_direction(direction)
+	if not current_direction == old_direction:
+		direction_changed.emit(get_direction_int(current_direction))
+		pass
 	var angle = current_direction.angle()
 	rotation = angle
+
+func get_direction_int(direction: Vector2):
+	match(direction):
+		UP:
+			return DIRECTIONS.UP
+		RIGHT:
+			return DIRECTIONS.RIGHT
+		DOWN:
+			return DIRECTIONS.DOWN
+		LEFT:
+			return DIRECTIONS.LEFT
 
 ## Takes a direction and returns either up, down, left, or right.
 ## For diagonal directions, prioritizes the current direction 

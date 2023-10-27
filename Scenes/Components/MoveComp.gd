@@ -16,12 +16,17 @@ var speed: float
 ## Use enable_movement() or disable_movement() to set this.
 var _is_movement_enabled: bool = true
 
+var is_moving: bool = false
+
 ## Emits when movement gets enabled.
 signal movement_enabled()
 ## Emits when movement gets disabled.
 signal movement_disabled()
 ## Emits when a body has finished teleporting
 signal teleported()
+
+signal movement_started()
+signal idle_started()
 
 
 # Called when the node enters the scene tree for the first time.
@@ -40,9 +45,15 @@ func move(body: CharacterBody2D, direction: Vector2):
 	# Accelerate or deccelerate the player
 	if _is_movement_enabled:
 		if direction.length() > 0:
+			if not is_moving:
+				movement_started.emit()
+				is_moving = true
 			body.velocity = body.velocity.lerp(direction.normalized() * speed, acceleration)
 		else:
 			body.velocity = body.velocity.lerp(Vector2.ZERO, friction)
+			if is_moving:
+				is_moving = false
+				idle_started.emit()
 		body.move_and_slide()
 
 func enable_movement():
