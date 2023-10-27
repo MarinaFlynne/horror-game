@@ -20,9 +20,6 @@ func _ready():
 	interaction_area.area_entered.connect(interaction_update)
 	interaction_area.area_exited.connect(interaction_update)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 		
 ## Takes a list of interactable objects and returns the closest one to the player
 func get_closest_interactable() -> Area2D:
@@ -43,7 +40,7 @@ func get_closest_interactable() -> Area2D:
 	# Now closest_interactable is the closest interactable to the player.
 	return closest_interactable
 		
-func interaction_update(area: Area2D):
+func interaction_update(_area: Area2D):
 	if is_interaction_enabled:
 		# Array of all areas overlapping with the interaction area (that it masks)
 		var interactables_within_reach = interaction_area.get_overlapping_areas()

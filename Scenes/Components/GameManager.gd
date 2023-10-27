@@ -13,7 +13,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 ## Show my dialogue balloon
@@ -28,7 +28,7 @@ func show_dialogue(resource: DialogueResource, title: String = "", extra_game_st
 #		print("GameManager: New dialogue disabled. Already in dialogue.")
 		pass
 
-func _on_dialogue_ended(resource):
+func _on_dialogue_ended(_resource):
 	dialogue_ended.emit()
 	await get_tree().create_timer(1).timeout
 	new_dialogue_allowed = true
