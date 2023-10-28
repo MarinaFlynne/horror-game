@@ -3,6 +3,7 @@ extends Node
 const dialogue_balloon = preload("res://Dialogue/Balloons/balloon.tscn")
 
 var new_dialogue_allowed: bool = true
+var dialogue_resource = preload("res://Dialogue/main_dialogue.dialogue")
 
 signal dialogue_started()
 signal dialogue_ended()
@@ -17,13 +18,13 @@ func _process(_delta):
 	pass
 
 ## Show my dialogue balloon
-func show_dialogue(resource: DialogueResource, title: String = "", extra_game_states: Array = []) -> void:
+func show_dialogue(title: String = "", extra_game_states: Array = []) -> void:
 	if new_dialogue_allowed:
 		dialogue_started.emit()
 		new_dialogue_allowed = false
 		var balloon: Node = dialogue_balloon.instantiate()
 		SceneManager.get_current_scene().add_child(balloon)
-		balloon.start(resource, title, extra_game_states)
+		balloon.start(dialogue_resource, title, extra_game_states)
 	else:
 #		print("GameManager: New dialogue disabled. Already in dialogue.")
 		pass

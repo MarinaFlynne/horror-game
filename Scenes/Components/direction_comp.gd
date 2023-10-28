@@ -11,6 +11,8 @@ const DOWN_RIGHT = Vector2(1,1)
 const DEFAULT_DIRECTION = DOWN
 
 var current_direction = DEFAULT_DIRECTION
+var direction_change_enabled: bool = true
+
 
 enum DIRECTIONS {UP, RIGHT, DOWN, LEFT}
 signal direction_changed(direction_int)
@@ -20,13 +22,14 @@ func _ready():
 
 ## Takes a direction and changes the current direction to either up, down, left, or right.
 func change_direction_cardinal(direction: Vector2):
-	var old_direction = current_direction
-	current_direction = get_current_cardinal_direction(direction)
-	if not current_direction == old_direction:
-		direction_changed.emit(get_direction_int(current_direction))
-		pass
-	var angle = current_direction.angle()
-	rotation = angle
+	if direction_change_enabled:	
+		var old_direction = current_direction
+		current_direction = get_current_cardinal_direction(direction)
+		if not current_direction == old_direction:
+			direction_changed.emit(get_direction_int(current_direction))
+			pass
+		var angle = current_direction.angle()
+		rotation = angle
 
 func get_direction_int(direction: Vector2):
 	match(direction):

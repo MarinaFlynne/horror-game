@@ -1,10 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://by3soj5eheilt"]
+[gd_scene load_steps=3 format=3 uid="uid://by3soj5eheilt"]
 
 [ext_resource type="Script" path="res://Scenes/Objects/flashlight.gd" id="1_x1va1"]
+[ext_resource type="Texture2D" uid="uid://cs8adpr4t6fp2" path="res://Sprites/Other/light.png" id="2_dq4m3"]
 
 [node name="Flashlight" type="Node2D"]
 script = ExtResource("1_x1va1")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(256, 0)
+texture_filter = 1
 rotation = 1.5708
+texture = ExtResource("2_dq4m3")

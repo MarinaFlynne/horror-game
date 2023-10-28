@@ -34,15 +34,15 @@ var current_animation: Dictionary = down_anim
 
 func _ready():
 	animation_component.play()
-	GameManager.dialogue_started.connect(disable_movement)
-	GameManager.dialogue_ended.connect(enable_movement)
+	GameManager.dialogue_started.connect(_on_dialogue_start)
+	GameManager.dialogue_ended.connect(_on_dialogue_end)
 	change_speed(default_speed)
 	initialize_teleporters()
 	initialize_light()
 	
 func _process(_delta):
-	if light_enabled:
-		rotate_flashlight_to_mouse()
+#	if light_enabled:
+#		rotate_flashlight_to_mouse()
 	process_input()
 
 func _physics_process(_delta):
@@ -62,7 +62,7 @@ func initialize_light():
 func process_input():
 	if Input.is_action_just_pressed("interact") and interact_component.is_interactable_in_reach:
 		var closest_interactable = interact_component.get_closest_interactable()
-		GameManager.show_dialogue(dialogue_resource, closest_interactable.dialogue_name)
+		GameManager.show_dialogue(closest_interactable.dialogue_name)
 
 func initialize_teleporters():
 	# Get all teleporters in scene
@@ -145,12 +145,22 @@ func update_animation():
 
 
 func _on_move_comp_idle_started():
-	print("idle")
 	current_state = STATES.IDLE
 	update_animation()
 
 
 func _on_move_comp_movement_started():
-	print("walk")
 	current_state = STATES.WALK
 	update_animation()
+
+func _on_dialogue_start():
+	disable_movement()
+	direction_component.direction_change_enabled = false
+	current_state = STATES.IDLE
+	update_animation()
+	
+func _on_dialogue_end():
+	enable_movement()
+	direction_component.direction_change_enabled = true
+	update_animation()
+	

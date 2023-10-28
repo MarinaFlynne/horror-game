@@ -113,7 +113,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_left",
-"speed": 7.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -127,7 +127,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_right",
-"speed": 7.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -142,7 +142,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6citr"]
-size = Vector2(11, 15)
+size = Vector2(11, 10)
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("move_component", "direction_component", "interact_component", "camera_component", "flashlight_component", "animation_component")]
 script = ExtResource("1_30b6g")
@@ -157,6 +157,7 @@ speed_states = {
 "sneak": 50,
 "walk": 80
 }
+metadata/_edit_group_ = true
 
 [node name="CenterMarker" type="Node2D" parent="."]
 
@@ -188,15 +189,14 @@ position_smoothing_enabled = true
 
 [node name="Flashlight" parent="." instance=ExtResource("3_mglm8")]
 visible = false
-position = Vector2(20, 20)
 
 [node name="CharacterAnimation" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_b3sec")
-animation = &"idle_down"
+animation = &"walk_left"
 autoplay = "idle_down"
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 8.5)
+position = Vector2(0.5, 11)
 shape = SubResource("RectangleShape2D_6citr")
 
 [node name="ColorRect" type="ColorRect" parent="."]
