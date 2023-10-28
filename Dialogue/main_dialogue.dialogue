@@ -55,6 +55,21 @@ Leah: can you promise me something?
 You: sighh..
 You: i guess i have to get up now
 
-=> END!
+=> END
 
+~ nightmare_start
+You: wh-
+You: what is this place?
+=> END
 
+~ nightmare_cat
+liar...
+=> END
+
+~ nightmare_fish
+how could you have been so selfish...
+=> END
+
+~ nightmare_bird
+you will regret this.
+=> END

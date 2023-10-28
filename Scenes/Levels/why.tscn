@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://ca8otsiin28ji"]
+
+[ext_resource type="Texture2D" uid="uid://dl5dmsk14kncu" path="res://Sprites/Other/why_text.png" id="2_j7xcv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygfrk"]
+atlas = ExtResource("2_j7xcv")
+region = Rect2(0, 0, 115, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmd7q"]
+atlas = ExtResource("2_j7xcv")
+region = Rect2(116, 0, 115, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eiyww"]
+atlas = ExtResource("2_j7xcv")
+region = Rect2(232, 0, 115, 61)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6wu33"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ygfrk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmd7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eiyww")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="Why" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="WhyText" type="AnimatedSprite2D" parent="."]
+position = Vector2(566, 329)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_6wu33")
+autoplay = "default"
+frame_progress = 0.781312
