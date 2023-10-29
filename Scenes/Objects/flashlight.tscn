@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://by3soj5eheilt"]
 
 [ext_resource type="Script" path="res://Scenes/Objects/flashlight.gd" id="1_x1va1"]
-[ext_resource type="Texture2D" uid="uid://cs8adpr4t6fp2" path="res://Sprites/Other/light.png" id="2_dq4m3"]
+[ext_resource type="Texture2D" uid="uid://cn2krp3yniak7" path="res://Sprites/Other/circlelight2.png" id="2_7xxov"]
 
 [node name="Flashlight" type="Node2D"]
 script = ExtResource("1_x1va1")
@@ -9,4 +9,4 @@ script = ExtResource("1_x1va1")
 [node name="PointLight2D" type="PointLight2D" parent="."]
 texture_filter = 1
 rotation = 1.5708
-texture = ExtResource("2_dq4m3")
+texture = ExtResource("2_7xxov")

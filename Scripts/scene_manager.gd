@@ -32,7 +32,7 @@ func RemoveScene(sceneAlias : String) -> void:
 	
 # Description: Switch to the requested scene based on its alias
 # Parameter sceneAlias: The scene alias of the scene to switch to
-func SwitchScene(sceneAlias : String, fade = true) -> void:
+func SwitchScene(sceneAlias : String, fade = false) -> void:
 	var fadeNode 
 	if fade:
 		fadeNode = get_node(fadePath)

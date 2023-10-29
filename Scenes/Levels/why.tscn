@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://ca8otsiin28ji"]
+[gd_scene load_steps=7 format=3 uid="uid://ca8otsiin28ji"]
 
+[ext_resource type="Script" path="res://Scenes/Levels/why.gd" id="1_mnkun"]
 [ext_resource type="Texture2D" uid="uid://dl5dmsk14kncu" path="res://Sprites/Other/why_text.png" id="2_j7xcv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ygfrk"]
@@ -32,6 +33,7 @@ animations = [{
 }]
 
 [node name="Why" type="Node2D"]
+script = ExtResource("1_mnkun")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1152.0

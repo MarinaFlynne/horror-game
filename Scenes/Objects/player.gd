@@ -59,10 +59,18 @@ func initialize_light():
 	else:
 		flashlight_component.disable_light()
 
+func enable_light():
+	light_enabled = true
+	flashlight_component.enable_light()
+
+func disable_light():
+	light_enabled = false
+	flashlight_component.disable_light()
+
 func process_input():
-	if Input.is_action_just_pressed("interact") and interact_component.is_interactable_in_reach:
+	if Input.is_action_just_pressed("interact") and interact_component.is_interactable_in_reach and GameManager.new_dialogue_allowed:
 		var closest_interactable = interact_component.get_closest_interactable()
-		GameManager.show_dialogue(closest_interactable.dialogue_name)
+		closest_interactable.interact()
 
 func initialize_teleporters():
 	# Get all teleporters in scene
@@ -114,9 +122,11 @@ func _on_teleporter_entered(body, teleport_pos):
 	
 func enable_movement():
 	move_component.enable_movement()
+	direction_component.direction_change_enabled = true
 
 func disable_movement():
 	move_component.disable_movement()
+	direction_component.direction_change_enabled = false
 
 func change_direction(direction_int: int):
 	current_direction = direction_int
@@ -155,12 +165,12 @@ func _on_move_comp_movement_started():
 
 func _on_dialogue_start():
 	disable_movement()
-	direction_component.direction_change_enabled = false
+	
 	current_state = STATES.IDLE
 	update_animation()
 	
 func _on_dialogue_end():
 	enable_movement()
-	direction_component.direction_change_enabled = true
+	
 	update_animation()
 	

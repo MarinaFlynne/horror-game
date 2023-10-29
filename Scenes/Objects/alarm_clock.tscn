@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://bkjijinnsf0th"]
+
+[ext_resource type="PackedScene" uid="uid://d2fcgdlk7t8wq" path="res://Scenes/Objects/interactable_object.tscn" id="1_sss6j"]
+[ext_resource type="Texture2D" uid="uid://c6o37gbpoaloi" path="res://Sprites/Objects/alarm_clock.png" id="2_ppgef"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_msp44"]
+atlas = ExtResource("2_ppgef")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0jup"]
+atlas = ExtResource("2_ppgef")
+region = Rect2(17, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6iymh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_msp44")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0jup")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="AlarmClock" instance=ExtResource("1_sss6j")]
+dialogue_name = "alarm_clock"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="2"]
+sprite_frames = SubResource("SpriteFrames_6iymh")
+autoplay = "default"

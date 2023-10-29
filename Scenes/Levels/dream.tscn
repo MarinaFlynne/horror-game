@@ -71,7 +71,6 @@ y_sort_enabled = true
 
 [node name="NPC" parent="Y-Sort Group" instance=ExtResource("4_m2c2f")]
 position = Vector2(82, -58)
-dialogue_name = "leah1"
 
 [node name="Trees" type="Node2D" parent="Y-Sort Group"]
 y_sort_enabled = true

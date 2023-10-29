@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbcbwvv3hl21u"]
+
+[ext_resource type="PackedScene" uid="uid://d2fcgdlk7t8wq" path="res://Scenes/Objects/interactable_object.tscn" id="1_p46lg"]
+
+[node name="house1_cat" instance=ExtResource("1_p46lg")]
+dialogue_name = "house1_cat"
+interact_sound = "res://Sounds/meow.mp3"
+
+[node name="ColorRect" type="ColorRect" parent="." index="0"]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+color = Color(0.956863, 0.662745, 0.352941, 1)

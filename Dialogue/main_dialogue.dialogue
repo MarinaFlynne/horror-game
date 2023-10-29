@@ -1,37 +1,11 @@
-~ dream_panic1
-You: wh-
-You: where am i?
-You: what is this place?
-=> END
-~ dream_panic2
-
-You: stay calm...
-You: everything will be... okay..
+# OBJECTS
+~ plant
+You: just a little plant.
 => END
 
-~ dream_panic3
-You: i need to find leah
+~ alarm_clock
+You: The alarm clock says that it's {{Globals.time["hour"]}}:{{Globals.time["minute"]}}{{Globals.time["ending"]}}.
 => END
-
-~ Plant
-
-Plant: Hello, I am a humble little plant.
-Plant: I have an important question for you...
-Plant: Who is the cutest kitty of all time?
-- Lore
-	Plant: CORRECT SHE IS THE CUTEST EVER :P
-	Plant: Mrow mrow mrew mrow mreowww
-- Mina
-	Plant: wrong
-- Tiggy
-	Plant: yknow what fine. tiggy is tied for first with lore.
-=> END
-
-~ Plant2
-
-You: This is a boring plant.
-=> END
-
 ~ leah1
 
 Leah: oh, hello there!
@@ -50,12 +24,7 @@ Leah: can you promise me something?
 
 => END
 
-~ aza_bed_day1
 
-You: sighh..
-You: i guess i have to get up now
-
-=> END
 
 ~ nightmare_start
 You: wh-
@@ -72,4 +41,17 @@ how could you have been so selfish...
 
 ~ nightmare_bird
 you will regret this.
+=> END
+
+~ aza_bed_day1
+
+You: ...
+You: what was that noise?
+
+=> END
+
+~ house1_cat
+Cat: meow
+You: oh, it was must have just been my silly kitty making all that noise.
+You: I should clean up the dishes and then head back to bed.
 => END

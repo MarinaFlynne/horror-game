@@ -14,7 +14,7 @@ extends Node
 var speed: float
 ## This is true if movement is allowed, false if not.
 ## Use enable_movement() or disable_movement() to set this.
-var _is_movement_enabled: bool = true
+var is_movement_enabled: bool = true
 
 var is_moving: bool = false
 
@@ -43,7 +43,7 @@ func _process(_delta):
 ## direction - the direction to move in.
 func move(body: CharacterBody2D, direction: Vector2):
 	# Accelerate or deccelerate the player
-	if _is_movement_enabled:
+	if is_movement_enabled:
 		if direction.length() > 0:
 			if not is_moving:
 				movement_started.emit()
@@ -57,12 +57,13 @@ func move(body: CharacterBody2D, direction: Vector2):
 		body.move_and_slide()
 
 func enable_movement():
-	_is_movement_enabled = true
+	is_movement_enabled = true
 	movement_enabled.emit()
 
 func disable_movement():
-	_is_movement_enabled = false
+	is_movement_enabled = false
 	movement_disabled.emit()
+	is_moving = false
 	
 func teleport_to(body: CharacterBody2D, teleport_position: Vector2):
 	body.global_position = teleport_position

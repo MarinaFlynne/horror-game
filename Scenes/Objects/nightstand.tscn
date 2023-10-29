@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgpdm0mjf4ob3"]
+
+[ext_resource type="Texture2D" uid="uid://brxp45wdrtf1d" path="res://Sprites/Objects/mini_table.png" id="1_y8pwe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d32b0"]
+size = Vector2(16, 15)
+
+[node name="Nightstand" type="StaticBody2D"]
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_y8pwe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_d32b0")

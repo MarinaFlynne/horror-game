@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cb5ahpvmw6mfw"]
+
+[ext_resource type="PackedScene" uid="uid://d2fcgdlk7t8wq" path="res://Scenes/Objects/interactable_object.tscn" id="1_iae0y"]
+[ext_resource type="Script" path="res://InteractableObject.gd" id="2_70fv4"]
+
+[node name="Leah1" instance=ExtResource("1_iae0y")]
+script = ExtResource("2_70fv4")
+scene_to_switch_to = "house"
+
+[node name="ColorRect" type="ColorRect" parent="." index="2"]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+color = Color(0.454902, 0.780392, 0.541176, 1)

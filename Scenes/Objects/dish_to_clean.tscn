@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://blkqwfbjfyawr"]
+
+[ext_resource type="PackedScene" uid="uid://d2fcgdlk7t8wq" path="res://Scenes/Objects/interactable_object.tscn" id="1_d401m"]
+[ext_resource type="Script" path="res://Scenes/Objects/dish_to_clean.gd" id="2_jbsbs"]
+
+[node name="dish_to_clean" instance=ExtResource("1_d401m")]
+script = ExtResource("2_jbsbs")
+interact_sound = "res://Sounds/pick_up_plate.mp3"
+
+[node name="ColorRect" type="ColorRect" parent="." index="2"]
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 5.0

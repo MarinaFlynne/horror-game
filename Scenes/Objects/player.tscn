@@ -145,6 +145,7 @@ animations = [{
 size = Vector2(11, 10)
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("move_component", "direction_component", "interact_component", "camera_component", "flashlight_component", "animation_component")]
+collision_layer = 2
 script = ExtResource("1_30b6g")
 move_component = NodePath("MoveComp")
 direction_component = NodePath("DirectionComp")

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bu26pr8wxk7c8"]
+
+[ext_resource type="PackedScene" uid="uid://d2fcgdlk7t8wq" path="res://Scenes/Objects/interactable_object.tscn" id="1_0wi5e"]
+[ext_resource type="Texture2D" uid="uid://b00vbvlklv5f5" path="res://Sprites/Objects/plant.png" id="2_prs7j"]
+
+[node name="Plant" instance=ExtResource("1_0wi5e")]
+dialogue_name = "plant"
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0.5, -10)
+
+[node name="Sprite2D" parent="." index="1"]
+position = Vector2(0.5, -10)
+texture = ExtResource("2_prs7j")

@@ -20,6 +20,12 @@ config/icon="res://icon.svg"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 SceneManager="*res://Scenes/Components/scene_manager.tscn"
 GameManager="*res://Scenes/Components/game_manager.tscn"
+AudioManager="*res://Scenes/Components/audio_manager.tscn"
+Globals="*res://Scenes/Components/globals.tscn"
+
+[dialogue_manager]
+
+general/wrap_lines=true
 
 [display]
 
