@@ -1,22 +1,25 @@
-[gd_scene load_steps=14 format=3 uid="uid://biwu8p6orq1l2"]
+[gd_scene load_steps=16 format=3 uid="uid://biwu8p6orq1l2"]
 
 [ext_resource type="TileSet" uid="uid://bajxsjdwktt1w" path="res://Tilesets/Main_tileset.tres" id="1_2kcli"]
 [ext_resource type="Script" path="res://Scenes/Levels/house.gd" id="1_srl8a"]
 [ext_resource type="PackedScene" uid="uid://doobbtyrtvmsm" path="res://Scenes/Components/teleport_marker.tscn" id="3_o8w2b"]
 [ext_resource type="PackedScene" uid="uid://b7x1rppynxtu3" path="res://Scenes/Objects/player.tscn" id="3_ydwqn"]
 [ext_resource type="PackedScene" uid="uid://x7b1am0gflcb" path="res://Scenes/Components/teleporter.tscn" id="4_2g1f3"]
+[ext_resource type="PackedScene" uid="uid://neacpyajixgt" path="res://Scenes/Objects/chair_back.tscn" id="5_axfte"]
 [ext_resource type="PackedScene" uid="uid://qokjnbv54p3i" path="res://Scenes/Objects/table.tscn" id="5_cb1d6"]
 [ext_resource type="PackedScene" uid="uid://ckga4km5w246v" path="res://Scenes/Objects/chair.tscn" id="6_m41ht"]
 [ext_resource type="PackedScene" uid="uid://bbcbwvv3hl21u" path="res://Scenes/Objects/house_1_cat.tscn" id="7_cm6ns"]
 [ext_resource type="PackedScene" uid="uid://bu26pr8wxk7c8" path="res://Scenes/Objects/plant.tscn" id="8_h3ywb"]
 [ext_resource type="PackedScene" uid="uid://1tup4n0k18l4" path="res://Scenes/Objects/big_table.tscn" id="8_va5uu"]
+[ext_resource type="PackedScene" uid="uid://gwlcbdbvlwjh" path="res://Scenes/Objects/bed.tscn" id="8_xuhl0"]
 [ext_resource type="PackedScene" uid="uid://blkqwfbjfyawr" path="res://Scenes/Objects/dish_to_clean.tscn" id="11_e3wix"]
 [ext_resource type="PackedScene" uid="uid://dgpdm0mjf4ob3" path="res://Scenes/Objects/nightstand.tscn" id="11_t8ig4"]
 [ext_resource type="PackedScene" uid="uid://bkjijinnsf0th" path="res://Scenes/Objects/alarm_clock.tscn" id="12_o8k6c"]
 
-[node name="House" type="Node2D" node_paths=PackedStringArray("player")]
+[node name="House" type="Node2D" node_paths=PackedStringArray("player", "bed")]
 script = ExtResource("1_srl8a")
 player = NodePath("Player")
+bed = NodePath("Y-index-objects/Bed")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_2kcli")
@@ -82,104 +85,101 @@ teleport_marker = NodePath("TeleportMarker")
 [node name="TeleportMarker" parent="Teleporters/Kitchen-Downstairs" instance=ExtResource("3_o8w2b")]
 position = Vector2(248, -49)
 
-[node name="Objects" type="Node2D" parent="."]
+[node name="ChairBack" parent="." instance=ExtResource("5_axfte")]
+position = Vector2(642, -154)
+
+[node name="Y-index-objects" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="Table" parent="Objects" instance=ExtResource("5_cb1d6")]
+[node name="Table" parent="Y-index-objects" instance=ExtResource("5_cb1d6")]
 position = Vector2(226, 4)
 
-[node name="Table2" parent="Objects" instance=ExtResource("5_cb1d6")]
+[node name="Table2" parent="Y-index-objects" instance=ExtResource("5_cb1d6")]
 position = Vector2(633, -168)
 
-[node name="Chair" parent="Objects" instance=ExtResource("6_m41ht")]
+[node name="Chair" parent="Y-index-objects" instance=ExtResource("6_m41ht")]
 position = Vector2(54, 35)
 
-[node name="Chair2" parent="Objects" instance=ExtResource("6_m41ht")]
+[node name="Chair2" parent="Y-index-objects" instance=ExtResource("6_m41ht")]
 position = Vector2(72, 35)
 
-[node name="Chair3" parent="Objects" instance=ExtResource("6_m41ht")]
+[node name="Chair3" parent="Y-index-objects" instance=ExtResource("6_m41ht")]
 position = Vector2(91, 29)
 
-[node name="house1_cat" parent="Objects" instance=ExtResource("7_cm6ns")]
+[node name="house1_cat" parent="Y-index-objects" instance=ExtResource("7_cm6ns")]
 position = Vector2(-388, 58)
 
-[node name="Bed" type="Sprite2D" parent="Objects"]
-position = Vector2(106, 0)
+[node name="Bed" parent="Y-index-objects" instance=ExtResource("8_xuhl0")]
+position = Vector2(732, -150)
+metadata/_edit_group_ = true
 
-[node name="ColorRect" type="ColorRect" parent="Objects/Bed"]
-offset_left = 640.0
-offset_top = -171.0
-offset_right = 692.0
-offset_bottom = -141.0
-rotation = 1.57079
-
-[node name="Bed2" type="Sprite2D" parent="Objects"]
+[node name="Bed2" type="Sprite2D" parent="Y-index-objects"]
 position = Vector2(-138, -394)
 
-[node name="ColorRect" type="ColorRect" parent="Objects/Bed2"]
+[node name="ColorRect" type="ColorRect" parent="Y-index-objects/Bed2"]
 offset_left = 640.0
 offset_top = -171.0
 offset_right = 692.0
 offset_bottom = -141.0
 rotation = 1.57079
 
-[node name="Bed3" type="Sprite2D" parent="Objects"]
+[node name="Bed3" type="Sprite2D" parent="Y-index-objects"]
 position = Vector2(-109, -394)
 
-[node name="ColorRect" type="ColorRect" parent="Objects/Bed3"]
+[node name="ColorRect" type="ColorRect" parent="Y-index-objects/Bed3"]
 offset_left = 640.0
 offset_top = -171.0
 offset_right = 692.0
 offset_bottom = -141.0
 rotation = 1.57079
 
-[node name="Painting" type="ColorRect" parent="Objects"]
+[node name="Painting" type="ColorRect" parent="Y-index-objects"]
 offset_left = 716.0
 offset_top = -220.0
 offset_right = 746.0
 offset_bottom = -202.0
 color = Color(0.180392, 0.576471, 0.490196, 1)
 
-[node name="Window" type="ColorRect" parent="Objects"]
+[node name="Window" type="ColorRect" parent="Y-index-objects"]
 offset_left = 619.0
 offset_top = -230.0
 offset_right = 659.0
 offset_bottom = -190.0
 
-[node name="Plant" parent="Objects" instance=ExtResource("8_h3ywb")]
+[node name="Plant" parent="Y-index-objects" instance=ExtResource("8_h3ywb")]
 position = Vector2(226, 4)
 
-[node name="Plant2" parent="Objects" instance=ExtResource("8_h3ywb")]
+[node name="Plant2" parent="Y-index-objects" instance=ExtResource("8_h3ywb")]
 position = Vector2(618, -168)
 
-[node name="BigTable" parent="Objects" instance=ExtResource("8_va5uu")]
+[node name="BigTable" parent="Y-index-objects" instance=ExtResource("8_va5uu")]
 position = Vector2(72, 56)
 
-[node name="dish_to_clean" parent="Objects" node_paths=PackedStringArray("clean_pos") instance=ExtResource("11_e3wix")]
+[node name="dish_to_clean" parent="Y-index-objects" node_paths=PackedStringArray("clean_pos") instance=ExtResource("11_e3wix")]
 position = Vector2(-307, 68)
 clean_pos = NodePath("CleanPos")
 
-[node name="CleanPos" type="Node2D" parent="Objects/dish_to_clean"]
+[node name="CleanPos" type="Node2D" parent="Y-index-objects/dish_to_clean"]
 position = Vector2(27, 3)
 
-[node name="dish_to_clean2" parent="Objects" node_paths=PackedStringArray("clean_pos") instance=ExtResource("11_e3wix")]
+[node name="dish_to_clean2" parent="Y-index-objects" node_paths=PackedStringArray("clean_pos") instance=ExtResource("11_e3wix")]
 position = Vector2(-371, 15)
 clean_pos = NodePath("CleanPos")
 
-[node name="CleanPos" type="Node2D" parent="Objects/dish_to_clean2"]
+[node name="CleanPos" type="Node2D" parent="Y-index-objects/dish_to_clean2"]
 position = Vector2(29, -7)
 
-[node name="dish_to_clean3" parent="Objects" node_paths=PackedStringArray("clean_pos") instance=ExtResource("11_e3wix")]
+[node name="dish_to_clean3" parent="Y-index-objects" node_paths=PackedStringArray("clean_pos") instance=ExtResource("11_e3wix")]
 position = Vector2(-342, 25)
 clean_pos = NodePath("CleanPos")
 
-[node name="CleanPos" type="Node2D" parent="Objects/dish_to_clean3"]
+[node name="CleanPos" type="Node2D" parent="Y-index-objects/dish_to_clean3"]
 position = Vector2(16, -17)
 
-[node name="Nightstand" parent="Objects" instance=ExtResource("11_t8ig4")]
+[node name="Nightstand" parent="Y-index-objects" instance=ExtResource("11_t8ig4")]
 position = Vector2(704, -164)
 
-[node name="AlarmClock" parent="Objects/Nightstand" instance=ExtResource("12_o8k6c")]
+[node name="AlarmClock" parent="Y-index-objects/Nightstand" instance=ExtResource("12_o8k6c")]
 position = Vector2(0, -5)
 
 [node name="Player" parent="." instance=ExtResource("3_ydwqn")]

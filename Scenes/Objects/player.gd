@@ -39,6 +39,7 @@ func _ready():
 	change_speed(default_speed)
 	initialize_teleporters()
 	initialize_light()
+	GameManager.player = self
 	
 func _process(_delta):
 #	if light_enabled:

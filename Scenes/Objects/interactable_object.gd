@@ -10,6 +10,7 @@ func _ready():
 func interact():
 	show_dialogue()
 	play_interact_sound()
+	after_interact()
 		
 func show_dialogue():
 	if not (dialogue_name == null or dialogue_name == ""):
@@ -18,3 +19,6 @@ func show_dialogue():
 func play_interact_sound():
 	if not (interact_sound == null or interact_sound == ""):
 		AudioManager.play(interact_sound)
+
+func after_interact():
+	pass

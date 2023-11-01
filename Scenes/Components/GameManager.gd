@@ -5,6 +5,9 @@ const dialogue_balloon = preload("res://Dialogue/Balloons/balloon.tscn")
 var new_dialogue_allowed: bool = true
 var dialogue_resource = preload("res://Dialogue/main_dialogue.dialogue")
 
+var player: CharacterBody2D
+var house_night_1_scene: Node2D
+
 signal dialogue_started()
 signal dialogue_ended()
 
@@ -33,3 +36,15 @@ func _on_dialogue_ended(_resource):
 	dialogue_ended.emit()
 	await get_tree().create_timer(1).timeout
 	new_dialogue_allowed = true
+	
+func _on_bed_interacted_with():
+	if Globals.current_level == Globals.LEVELS.HOUSE_NIGHT_1 && Globals.night_1_sleep_time:
+		print("SLEEPING. play scary scene and then wake up in morning.")
+		# Transition to the morning
+		house_night_1_scene.enter_bed()
+		
+		
+func _on_cat_interacted_with():
+	if Globals.current_level == Globals.LEVELS.HOUSE_NIGHT_1:
+		print("cat interacted with")
+		Globals.night_1_sleep_time = true

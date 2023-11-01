@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bbcbwvv3hl21u"]
+[gd_scene load_steps=3 format=3 uid="uid://bbcbwvv3hl21u"]
 
 [ext_resource type="PackedScene" uid="uid://d2fcgdlk7t8wq" path="res://Scenes/Objects/interactable_object.tscn" id="1_p46lg"]
+[ext_resource type="Script" path="res://Scenes/Objects/house_1_cat.gd" id="2_s5gh5"]
 
 [node name="house1_cat" instance=ExtResource("1_p46lg")]
+script = ExtResource("2_s5gh5")
 dialogue_name = "house1_cat"
 interact_sound = "res://Sounds/meow.mp3"
 
