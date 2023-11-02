@@ -1,6 +1,7 @@
 extends Node
 
 @export var time: Dictionary = {"hour": "0", "minute": "00", "ending": "am"}
+@export var inventory: Dictionary = {"milk": false, "cereal": false, "cereal_bowl": false}
 
 enum LEVELS{HEADWORLD_1, HOUSE_NIGHT_1, HEADWORLD_2, HOUSE_DAY_1, HEADWORLD_3}
 

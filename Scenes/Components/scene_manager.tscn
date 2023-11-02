@@ -6,5 +6,7 @@
 script = ExtResource("1_7qkxw")
 Scenes = {
 "headworld1": &"res://Scenes/Levels/headworld_1.tscn",
-"house": &"res://Scenes/Levels/house.tscn"
+"house": &"res://Scenes/Levels/house.tscn",
+"house_day_1": &"res://Scenes/Levels/house_day_1.tscn",
+"why": &"res://Scenes/Levels/why.tscn"
 }

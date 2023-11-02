@@ -55,3 +55,38 @@ Cat: meow
 You: oh, it was must have just been my silly kitty making all that noise.
 You: I should clean up the dishes and then head back to bed.
 => END
+
+~ day_1_awaken
+You: *yawn*
+You: another day
+You: ... i should go get breakfast
+=> END
+
+~ fridge_milk
+if (not Globals.inventory["milk"]) and (not Globals.inventory["cereal_bowl"])
+	* You grabbed some milk from the fridge.
+	do Globals.inventory["milk"] = true
+else
+	You: Nothing else of interest in here.
+=> END
+
+~ cereal_collect
+* You picked up the cereal box.
+do Globals.inventory["cereal"] = true
+=> END!
+
+~ cereal_bowl
+if Globals.inventory["cereal"] and Globals.inventory["milk"]
+	do Globals.inventory["cereal"] = false
+	do Globals.inventory["milk"] = false
+	do Globals.inventory["cereal_bowl"] = true
+	* You pour the cereal and milk into the bowl
+	You: alright, lets go sit down at the table and eat.
+	
+elif Globals.inventory["cereal"]
+	You: I need to get some milk from the fridge.
+elif Globals.inventory["milk"]
+	You: I need to get some cereal first.
+else
+	You: I'll need to grab the cereal box and some milk.
+=> END

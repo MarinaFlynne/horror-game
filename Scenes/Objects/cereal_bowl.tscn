@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dd6tt5wk2g2t5"]
+
+[ext_resource type="PackedScene" uid="uid://d2fcgdlk7t8wq" path="res://Scenes/Objects/interactable_object.tscn" id="1_oxpwx"]
+[ext_resource type="Script" path="res://Scenes/Objects/cereal_bowl.gd" id="2_kjg3f"]
+
+[node name="CerealBowl" instance=ExtResource("1_oxpwx")]
+script = ExtResource("2_kjg3f")
+dialogue_name = "cereal_bowl"
+
+[node name="ColorRect" type="ColorRect" parent="." index="2"]
+offset_left = -7.0
+offset_top = -7.0
+offset_right = 7.0
+offset_bottom = 7.0
+color = Color(0.733333, 0.733333, 0.733333, 1)

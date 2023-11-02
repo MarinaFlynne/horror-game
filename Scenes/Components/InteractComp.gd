@@ -17,8 +17,11 @@ signal interactables_out_of_reach()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	assert(interaction_area != null, "ERROR: No interaction area set.")
-	interaction_area.area_entered.connect(interaction_update)
-	interaction_area.area_exited.connect(interaction_update)
+#	interaction_area.area_entered.connect(interaction_update)
+#	interaction_area.area_exited.connect(interaction_update)
+
+func _physics_process(delta):
+	interaction_update()
 
 		
 ## Takes a list of interactable objects and returns the closest one to the player
@@ -40,7 +43,7 @@ func get_closest_interactable() -> Area2D:
 	# Now closest_interactable is the closest interactable to the player.
 	return closest_interactable
 		
-func interaction_update(_area: Area2D):
+func interaction_update():
 	if is_interaction_enabled:
 		# Array of all areas overlapping with the interaction area (that it masks)
 		var interactables_within_reach = interaction_area.get_overlapping_areas()

@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1rkckhmqcju4"]
+
+[ext_resource type="PackedScene" uid="uid://d2fcgdlk7t8wq" path="res://Scenes/Objects/interactable_object.tscn" id="1_qr0tu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h51ef"]
+size = Vector2(40, 57)
+
+[node name="InteractableObject" instance=ExtResource("1_qr0tu")]
+dialogue_name = "fridge_milk"
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(20, 28.5)
+shape = SubResource("RectangleShape2D_h51ef")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="2"]
+collision_mask = 0
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(20, 29)
+shape = SubResource("RectangleShape2D_h51ef")
+
+[node name="ColorRect" type="ColorRect" parent="." index="3"]
+offset_right = 40.0
+offset_bottom = 57.0
