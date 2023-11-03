@@ -6,6 +6,13 @@ You: just a little plant.
 ~ alarm_clock
 You: The alarm clock says that it's {{Globals.time["hour"]}}:{{Globals.time["minute"]}}{{Globals.time["ending"]}}.
 => END
+
+~ wall_bang
+Bang your head against the wall?
+- yes
+	TODO: Insert wall banging sound effect here.
+- no
+=> END
 ~ leah1
 
 Leah: oh, hello there!

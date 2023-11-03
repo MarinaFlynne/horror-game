@@ -1,22 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://gwlcbdbvlwjh"]
+[gd_scene load_steps=5 format=3 uid="uid://gwlcbdbvlwjh"]
 
 [ext_resource type="Script" path="res://Scenes/Objects/bed.gd" id="1_g4fek"]
+[ext_resource type="Texture2D" uid="uid://bdbt5w8cnars6" path="res://Sprites/Objects/bed-no-blanket.png" id="2_7u2xt"]
+[ext_resource type="Texture2D" uid="uid://dff0l8456hkx1" path="res://Sprites/Objects/blanket.png" id="3_xwfar"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_do1me"]
-size = Vector2(30, 50)
+size = Vector2(30, 43)
 
 [node name="Bed" type="Area2D"]
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_g4fek")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 14.0
-offset_top = -24.0
-offset_right = 64.0
-offset_bottom = 6.0
-rotation = 1.57079
+[node name="InteractShape" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_do1me")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 1)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_7u2xt")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture = ExtResource("3_xwfar")
+
+[node name="Collision" type="StaticBody2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision"]
 shape = SubResource("RectangleShape2D_do1me")
