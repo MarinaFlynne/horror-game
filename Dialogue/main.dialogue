@@ -1,0 +1,11 @@
+~ start_dream
+You: wh..
+You: where am i?
+=> END
+
+~ start_dream_liar
+liar
+liar
+LIAR
+
+=> END

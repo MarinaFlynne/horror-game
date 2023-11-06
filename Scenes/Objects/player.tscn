@@ -193,6 +193,7 @@ position_smoothing_enabled = true
 visible = false
 
 [node name="CharacterAnimation" type="AnimatedSprite2D" parent="."]
+light_mask = 3
 sprite_frames = SubResource("SpriteFrames_b3sec")
 animation = &"walk_right"
 autoplay = "idle_down"

@@ -3,7 +3,7 @@ extends Node
 const dialogue_balloon = preload("res://Dialogue/Balloons/balloon.tscn")
 
 var new_dialogue_allowed: bool = true
-var dialogue_resource = preload("res://Dialogue/main_dialogue.dialogue")
+var dialogue_resource = preload("res://Dialogue/main.dialogue")
 
 var player: CharacterBody2D
 var house_night_1_scene: Node2D
