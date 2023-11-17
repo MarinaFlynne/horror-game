@@ -4,6 +4,7 @@ extends Area2D
 @export_file() var interact_sound: String
 
 signal interacted()
+signal dialogue_ended()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,6 +16,7 @@ func interact():
 	play_interact_sound()
 	after_interact()
 	await GameManager.dialogue_ended
+	dialogue_ended.emit()
 	on_dialogue_end()
 		
 func show_dialogue():
