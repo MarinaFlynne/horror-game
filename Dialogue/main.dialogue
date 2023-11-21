@@ -21,3 +21,16 @@ why cant you just obey?
 h-hey
 
 => END!
+
+~ alarm_clock
+You: The alarm clock says that it's {{Globals.time["hour"]}}:{{Globals.time["minute"]}}{{Globals.time["ending"]}}.
+=> END
+
+~ plant
+You: Just a little plant.
+=> END!
+
+~ wall_bang
+TODO: Insert wall bang sound effect
+*You bang your head against the wall*
+=> END
