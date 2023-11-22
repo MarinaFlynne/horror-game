@@ -10,3 +10,13 @@ script = ExtResource("2_xa7xd")
 [node name="Sprite2D" parent="." index="1"]
 position = Vector2(0, -13)
 texture = ExtResource("2_notkq")
+
+[node name="BlinkTimer" type="Timer" parent="." index="2"]
+one_shot = true
+
+[node name="EndBlink" type="Timer" parent="." index="3"]
+wait_time = 10.0
+one_shot = true
+
+[connection signal="timeout" from="BlinkTimer" to="." method="_on_blink_timer_timeout"]
+[connection signal="timeout" from="EndBlink" to="." method="disable_blinking"]

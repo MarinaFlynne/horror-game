@@ -38,10 +38,9 @@ func _on_dialogue_ended(_resource):
 	new_dialogue_allowed = true
 	
 func _on_bed_interacted_with():
-	if Globals.current_level == Globals.LEVELS.HOUSE_NIGHT_1 && Globals.night_1_sleep_time:
-		print("SLEEPING. play scary scene and then wake up in morning.")
-		# Transition to the morning
-		house_night_1_scene.enter_bed()
+	if Globals.plates_cleaned >= 4:
+		print("gamemanager: TODO - SWITCH TO NEXT SCENE")
+		pass
 		
 		
 func _on_cat_interacted_with():

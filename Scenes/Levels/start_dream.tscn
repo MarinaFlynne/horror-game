@@ -167,22 +167,26 @@ speed_states = {
 "walk": 100
 }
 
-[node name="Thing2" parent="Objects2" node_paths=PackedStringArray("teleport_location") instance=ExtResource("10_mi1a6")]
+[node name="Thing2" parent="Objects2" node_paths=PackedStringArray("teleport_location", "player") instance=ExtResource("10_mi1a6")]
 position = Vector2(60, 953)
 teleport_location = NodePath("../TeleportLoc1")
+player = NodePath("../Player")
 
-[node name="Thing3" parent="Objects2" node_paths=PackedStringArray("teleport_location") instance=ExtResource("10_mi1a6")]
+[node name="Thing3" parent="Objects2" node_paths=PackedStringArray("teleport_location", "player") instance=ExtResource("10_mi1a6")]
 position = Vector2(987, 746)
 teleport_location = NodePath("../TeleportLoc1")
+player = NodePath("../Player")
 
-[node name="Thing" parent="Objects2" node_paths=PackedStringArray("teleport_location") instance=ExtResource("10_mi1a6")]
+[node name="Thing" parent="Objects2" node_paths=PackedStringArray("teleport_location", "player") instance=ExtResource("10_mi1a6")]
 position = Vector2(1126, 54)
 teleport_location = NodePath("../TeleportLoc1")
+player = NodePath("../Player")
 dialogue_name = "start_dream_liar"
 
-[node name="Thing4" parent="Objects2" node_paths=PackedStringArray("teleport_location") instance=ExtResource("10_mi1a6")]
+[node name="Thing4" parent="Objects2" node_paths=PackedStringArray("teleport_location", "player") instance=ExtResource("10_mi1a6")]
 position = Vector2(1475, 268)
 teleport_location = NodePath("../TeleportLoc2")
+player = NodePath("../Player")
 dialogue_name = "start_dream_thing2"
 
 [node name="Leah" parent="Objects2" instance=ExtResource("11_vr107")]

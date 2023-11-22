@@ -13,4 +13,6 @@ func interact():
 		play_interact_sound()
 		global_position = clean_pos.global_position
 		is_already_interacted_with = true
+		Globals.plates_cleaned += 1
+		interacted.emit()
 

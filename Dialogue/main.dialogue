@@ -22,6 +22,24 @@ h-hey
 
 => END!
 
+~ nightmare_wakeup_start
+You: ... what was that?
+You: I should go check it out.
+=> END
+
+~ cat
+You: sigh. my cat
+You: i'll clean this up and then head back to bed
+=> END!
+
+~ nightmare_wakeup_thing
+???: ...
+=> END!
+
+~ dishes_cleaned
+You: cleaned up the kitchen, I should head back to bed now
+=> END
+
 ~ alarm_clock
 You: The alarm clock says that it's {{Globals.time["hour"]}}:{{Globals.time["minute"]}}{{Globals.time["ending"]}}.
 => END

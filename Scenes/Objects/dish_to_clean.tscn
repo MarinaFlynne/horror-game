@@ -1,13 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://blkqwfbjfyawr"]
+[gd_scene load_steps=4 format=3 uid="uid://blkqwfbjfyawr"]
 
 [ext_resource type="PackedScene" uid="uid://d2fcgdlk7t8wq" path="res://Scenes/Objects/interactable_object.tscn" id="1_d401m"]
 [ext_resource type="Script" path="res://Scenes/Objects/dish_to_clean.gd" id="2_jbsbs"]
+[ext_resource type="Texture2D" uid="uid://dkcqvhsk52i3" path="res://Sprites/Objects/plate.png" id="3_le4nx"]
 
 [node name="dish_to_clean" instance=ExtResource("1_d401m")]
 script = ExtResource("2_jbsbs")
 interact_sound = "res://Sounds/pick_up_plate.mp3"
 
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, -0.5)
+
+[node name="Sprite2D" parent="." index="1"]
+position = Vector2(0, 1)
+texture = ExtResource("3_le4nx")
+
 [node name="ColorRect" type="ColorRect" parent="." index="2"]
+visible = false
 offset_left = -5.0
 offset_top = -5.0
 offset_right = 5.0
