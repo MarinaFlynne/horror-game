@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cra0yj5vllnro"]
+
+[ext_resource type="PackedScene" uid="uid://d2fcgdlk7t8wq" path="res://Scenes/Objects/interactable_object.tscn" id="1_a61dm"]
+
+[node name="DinnerChairInteractable" instance=ExtResource("1_a61dm")]

@@ -3,11 +3,14 @@ extends Node2D
 @export var bed: Area2D
 @export var out_of_bed_marker: Node2D
 @export var thing: Area2D
+@export var darkness_anim_player: AnimationPlayer
+@export var darkness: CanvasModulate
 
 var is_kitchen_entered := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	darkness.color = Color(0, 0, 0, 255)
 	Globals.time["hour"] = "2"
 	Globals.time["minute"] = "16"
 	Globals.time["ending"] = "am"
@@ -18,6 +21,8 @@ func _ready():
 	%Player.disable_movement()
 	AudioManager.play("res://Sounds/pots_crash.mp3")
 	await get_tree().create_timer(2.5).timeout
+	darkness_anim_player.play("fade_in")
+	await get_tree().create_timer(0.5).timeout
 #	%Player.enable_light()
 	GameManager.show_dialogue("nightmare_wakeup_start")
 	await GameManager.dialogue_ended
@@ -44,3 +49,8 @@ func _on_dish_to_clean_interacted():
 		thing.enable_blinking()
 	
 		
+
+
+func _on_bed_interacted_with():
+	if Globals.plates_cleaned >= 4:
+		SceneManager.SwitchScene("alarm_rings", true)

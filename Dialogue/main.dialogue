@@ -52,3 +52,22 @@ You: Just a little plant.
 TODO: Insert wall bang sound effect
 *You bang your head against the wall*
 => END
+
+~ alarm_rings
+You: *yawn*
+You: aughh
+=> END!
+
+~ dinner_time
+
+Parents: DINNER TIME
+Parents: Come downstairs for dinner now
+do wait(1)
+You: sighh..
+You: How long was I asleep for?...
+=> END!
+
+~ dinner
+Father: Hello.
+You: hi.
+=> END

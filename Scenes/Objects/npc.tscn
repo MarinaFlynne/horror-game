@@ -1,13 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://bihcxqprt4bgh"]
+[gd_scene load_steps=3 format=3 uid="uid://bihcxqprt4bgh"]
 
 [ext_resource type="PackedScene" uid="uid://d2fcgdlk7t8wq" path="res://Scenes/Objects/interactable_object.tscn" id="1_smmv3"]
+[ext_resource type="Texture2D" uid="uid://b3kcubo3cge72" path="res://Sprites/Characters/Leah/Leah.png" id="2_ssxt1"]
 
 [node name="NPC" instance=ExtResource("1_smmv3")]
 
 [node name="CollisionShape2D" parent="." index="0"]
 position = Vector2(10, 10)
 
+[node name="Sprite2D" parent="." index="1"]
+position = Vector2(10, 3)
+texture = ExtResource("2_ssxt1")
+
 [node name="ColorRect" type="ColorRect" parent="." index="2"]
+visible = false
 offset_right = 20.0
 offset_bottom = 20.0
 color = Color(0.772549, 0.486275, 0.211765, 1)

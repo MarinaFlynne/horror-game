@@ -19,8 +19,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ts3tu"]
 size = Vector2(20, 159)
 
-[node name="AlarmRings" type="Node2D"]
+[node name="AlarmRings" type="Node2D" node_paths=PackedStringArray("bed")]
 script = ExtResource("1_xh5cu")
+bed = NodePath("Objects/Bed")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("2_p61w2")
@@ -103,11 +104,6 @@ dialogue_name = "nightmare_wakeup_thing"
 [node name="Player" parent="Objects" instance=ExtResource("17_5ins3")]
 unique_name_in_owner = true
 position = Vector2(171, 15)
-speed_states = {
-"run": 100,
-"sneak": 50,
-"walk": 60
-}
 dialogue_resource = ExtResource("18_drclh")
 
 [node name="KitchenChecker" type="Area2D" parent="Objects"]
@@ -118,3 +114,6 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/KitchenChecker"]
 position = Vector2(-48, -25.5)
 shape = SubResource("RectangleShape2D_ts3tu")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.423529, 0.423529, 0.423529, 1)

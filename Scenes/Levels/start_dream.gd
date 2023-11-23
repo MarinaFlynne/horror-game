@@ -30,4 +30,5 @@ func _on_teleporter_to_ocean_body_entered(body):
 
 func _on_leah_dialogue_ended():
 	print('leah dialogue ended')
+	SceneManager.SwitchScene("nightmare_wakeup")
 	pass

@@ -1,12 +1,67 @@
-[gd_scene load_steps=2 format=3 uid="uid://dtblho8r2fexk"]
+[gd_scene load_steps=5 format=3 uid="uid://dtblho8r2fexk"]
 
 [ext_resource type="Script" path="res://Scripts/scene_manager.gd" id="1_7qkxw"]
+
+[sub_resource type="Animation" id="Animation_jn1u8"]
+resource_name = "fade"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_a7qe2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i4u4f"]
+_data = {
+"RESET": SubResource("Animation_a7qe2"),
+"fade": SubResource("Animation_jn1u8")
+}
 
 [node name="SceneManager" type="Node"]
 script = ExtResource("1_7qkxw")
 Scenes = {
-"headworld1": &"res://Scenes/Levels/headworld_1.tscn",
-"house": &"res://Scenes/Levels/house.tscn",
-"house_day_1": &"res://Scenes/Levels/house_day_1.tscn",
+"alarm_rings": &"res://Scenes/Levels/alarm_rings.tscn",
+"house_real": &"res://Scenes/Levels/house_real.tscn",
+"nightmare_wakeup": &"res://Scenes/Levels/nightmare_wakeup.tscn",
+"start_dream": &"res://Scenes/Levels/start_dream.tscn",
 "why": &"res://Scenes/Levels/why.tscn"
+}
+fadePath = NodePath("CanvasLayer/ColorRect/Fade")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 4
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="Fade" type="AnimationPlayer" parent="CanvasLayer/ColorRect"]
+libraries = {
+"": SubResource("AnimationLibrary_i4u4f")
 }

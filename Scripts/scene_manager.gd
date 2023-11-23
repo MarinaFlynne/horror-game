@@ -36,12 +36,12 @@ func SwitchScene(sceneAlias : String, fade = false) -> void:
 	var fadeNode 
 	if fade:
 		fadeNode = get_node(fadePath)
-		fadeNode.play("Fade")
+		fadeNode.play("fade")
 		await fadeNode.animation_finished
 	get_tree().change_scene_to_file(Scenes[sceneAlias])
 	if fade:
 		await get_tree().create_timer(0.7).timeout
-		fadeNode.play_backwards("Fade")
+		fadeNode.play_backwards("fade")
  
 # Description: Restart the current scene
 func RestartScene() -> void:

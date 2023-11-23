@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://cows2iogpw5xb"]
+[gd_scene load_steps=21 format=3 uid="uid://cows2iogpw5xb"]
 
+[ext_resource type="Script" path="res://Scenes/Levels/house_real.gd" id="1_0jt1q"]
 [ext_resource type="TileSet" uid="uid://bajxsjdwktt1w" path="res://Tilesets/Main_tileset.tres" id="1_eyf36"]
 [ext_resource type="PackedScene" uid="uid://gwlcbdbvlwjh" path="res://Scenes/Objects/bed.tscn" id="2_u6pj0"]
 [ext_resource type="PackedScene" uid="uid://dgpdm0mjf4ob3" path="res://Scenes/Objects/nightstand.tscn" id="3_hd0xs"]
@@ -14,8 +15,22 @@
 [ext_resource type="PackedScene" uid="uid://1tup4n0k18l4" path="res://Scenes/Objects/big_table.tscn" id="11_sxaxg"]
 [ext_resource type="PackedScene" uid="uid://neacpyajixgt" path="res://Scenes/Objects/chair_back.tscn" id="12_tiwc6"]
 [ext_resource type="PackedScene" uid="uid://ctda4nxc3yaln" path="res://Scenes/Objects/food.tscn" id="13_lv3g0"]
+[ext_resource type="PackedScene" uid="uid://cra0yj5vllnro" path="res://Scenes/Objects/dinner_chair_interactable.tscn" id="14_igifo"]
+[ext_resource type="Texture2D" uid="uid://dfgoahafydvtr" path="res://Sprites/Objects/chair_back_back_only.png" id="15_qff8p"]
+[ext_resource type="Texture2D" uid="uid://dspmd6xml5c0g" path="res://Sprites/Objects/thing1.png" id="17_tau43"]
+[ext_resource type="Texture2D" uid="uid://cdpmsv64o5bs0" path="res://Sprites/Objects/thing2.png" id="18_i1smg"]
 
-[node name="HouseReal" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_03aji"]
+
+[node name="HouseReal" type="Node2D" node_paths=PackedStringArray("bed", "out_of_bed_marker", "darkness", "chair_back", "dinner_chair_interactable", "chair")]
+z_index = 1
+script = ExtResource("1_0jt1q")
+bed = NodePath("Objects/Bed")
+out_of_bed_marker = NodePath("Objects/OutOfBedMarker")
+darkness = NodePath("CanvasModulate")
+chair_back = NodePath("Objects/ChairBack2/ChairBack")
+dinner_chair_interactable = NodePath("Objects/ChairBack2/DinnerChairInteractable")
+chair = NodePath("Objects/ChairBack2")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_eyf36")
@@ -41,6 +56,17 @@ layer_2/tile_data = PackedInt32Array(327682, 131072, 1, 3080223, 131072, 1)
 [node name="Bed" parent="Objects" instance=ExtResource("2_u6pj0")]
 position = Vector2(175, 21)
 
+[node name="OutOfBedMarker" type="Marker2D" parent="Objects"]
+position = Vector2(153, 27)
+
+[node name="LightOnArea" type="Area2D" parent="Objects"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/LightOnArea"]
+position = Vector2(553, 558)
+shape = SubResource("RectangleShape2D_03aji")
+
 [node name="Nightstand" parent="Objects" instance=ExtResource("3_hd0xs")]
 position = Vector2(143, 9)
 
@@ -57,7 +83,7 @@ position = Vector2(27, 10)
 position = Vector2(105, -10)
 
 [node name="Bedroom-Hall" parent="Objects" node_paths=PackedStringArray("teleport_marker") instance=ExtResource("8_lb765")]
-position = Vector2(40, 112)
+position = Vector2(40, 108)
 teleport_marker = NodePath("../Bedroom-Hall Marker")
 
 [node name="Bedroom-Hall Marker" parent="Objects" instance=ExtResource("9_o486n")]
@@ -68,7 +94,7 @@ position = Vector2(552, 534)
 teleport_marker = NodePath("../Hall-Bedroom Marker")
 
 [node name="Hall-Bedroom Marker" parent="Objects" instance=ExtResource("9_o486n")]
-position = Vector2(40, 84)
+position = Vector2(41, 80)
 
 [node name="Table2" parent="Objects" instance=ExtResource("5_ggtoq")]
 position = Vector2(498, 710)
@@ -85,14 +111,22 @@ position = Vector2(508, 710)
 [node name="Chair2" parent="Objects" instance=ExtResource("10_kc3jp")]
 position = Vector2(-19, 689)
 
+[node name="Chair3" parent="Objects" instance=ExtResource("10_kc3jp")]
+position = Vector2(-48, 689)
+
 [node name="BigTable" parent="Objects" instance=ExtResource("11_sxaxg")]
 position = Vector2(-31, 712)
 
-[node name="ChairBack" parent="Objects" instance=ExtResource("12_tiwc6")]
-position = Vector2(-51, 734)
-
 [node name="ChairBack2" parent="Objects" instance=ExtResource("12_tiwc6")]
 position = Vector2(-17, 735)
+
+[node name="DinnerChairInteractable" parent="Objects/ChairBack2" instance=ExtResource("14_igifo")]
+position = Vector2(0, -15)
+
+[node name="ChairBack" type="Sprite2D" parent="Objects/ChairBack2"]
+visible = false
+z_index = 1
+texture = ExtResource("15_qff8p")
 
 [node name="Food" parent="Objects" instance=ExtResource("13_lv3g0")]
 position = Vector2(-19, 700)
@@ -101,10 +135,7 @@ position = Vector2(-19, 700)
 position = Vector2(-17, 717)
 
 [node name="Food3" parent="Objects" instance=ExtResource("13_lv3g0")]
-position = Vector2(-51, 716)
-
-[node name="Food4" parent="Objects" instance=ExtResource("13_lv3g0")]
-position = Vector2(-51, 716)
+position = Vector2(-48, 699)
 
 [node name="Hall-Kitchen" parent="Objects" node_paths=PackedStringArray("teleport_marker") instance=ExtResource("8_lb765")]
 position = Vector2(302, 728)
@@ -123,5 +154,21 @@ position = Vector2(21, 759)
 [node name="Plant4" parent="Objects" instance=ExtResource("6_tuwwf")]
 position = Vector2(-35, 711)
 
+[node name="Parent1" type="Sprite2D" parent="Objects"]
+position = Vector2(-53, 673)
+texture = ExtResource("17_tau43")
+
+[node name="Parent2" type="Sprite2D" parent="Objects"]
+position = Vector2(-22, 672)
+texture = ExtResource("18_i1smg")
+
 [node name="Player" parent="." instance=ExtResource("7_mmy1h")]
-position = Vector2(98, 21)
+unique_name_in_owner = true
+position = Vector2(-17, 720)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
+color = Color(0.129412, 0.133333, 0.113725, 1)
+
+[connection signal="body_entered" from="Objects/LightOnArea" to="." method="_on_light_on_area_body_entered"]
+[connection signal="interacted" from="Objects/ChairBack2/DinnerChairInteractable" to="." method="_on_dinner_chair_interactable_interacted"]
