@@ -6,6 +6,8 @@ extends Node2D
 @export var chair_back: Sprite2D
 @export var dinner_chair_interactable: Area2D
 @export var chair: Area2D
+@export var black_overlay: ColorRect
+#@export var dark_bg_layer: ParallaxLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -40,4 +42,9 @@ func _on_dinner_chair_interactable_interacted():
 	%Player.change_direction(%Player.DIRECTIONS.UP)
 	%Player.disable_movement()
 	GameManager.show_dialogue("dinner")
+	await GameManager.dialogue_ended
+	await get_tree().create_timer(0.5).timeout
+	black_overlay.show()
+	await get_tree().create_timer(2).timeout
+	SceneManager.SwitchScene("house_dream")
 	

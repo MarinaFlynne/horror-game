@@ -4,9 +4,8 @@ You: where am i?
 => END
 
 ~ start_dream_liar
-liar
-liar
-LIAR
+liar. liar. liar. liar. liar. liar
+LIAR LIAR LIAR LIAR
 
 => END
 
@@ -53,6 +52,21 @@ TODO: Insert wall bang sound effect
 *You bang your head against the wall*
 => END
 
+~ dream_2_cat
+mrow
+was it worth it?
+
+=> END
+
+~ dream_2_leah
+leah: why..
+leah: how could you
+leah: how could you abandon me..
+leah: AREN'T WE FRIENDS
+
+
+=> END!
+
 ~ alarm_rings
 You: *yawn*
 You: aughh
@@ -68,6 +82,32 @@ You: How long was I asleep for?...
 => END!
 
 ~ dinner
-Father: Hello.
-You: hi.
+Father: Hello Aza.
+do wait(2)
+Father: How was your day?
+- it was fine
+- ...
+do wait(1.5)
+Father: What did you do today?
+- nothing
+do wait(0.5)
+Mother: we hardly see you anymore. what do you do in your room all day?
+- I was tired
+do wait(0.5)
+Father: Well, we've been thinking of planning a family vacation. Any suggestions?
+- no
+- not really
+- i don't care
+do wait(0.5)
+Father: You seem distant lately. We're just trying to connect as a family.
+Father: Don't you love us?
+do wait(2.5)
+Father: We're your parents. We just want to be involved in your life
+do wait(0.2)
+Mother: We just want what's best for you. Don't you understand?
+
 => END
+
+~ house_dream_get_away
+You: GET AWAY FROM ME
+=> END!

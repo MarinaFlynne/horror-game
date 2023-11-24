@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://bk2b6uopdrq6x"]
+
+[ext_resource type="PackedScene" uid="uid://d2fcgdlk7t8wq" path="res://Scenes/Objects/interactable_object.tscn" id="1_yjry3"]
+[ext_resource type="Texture2D" uid="uid://c202e33nyspi8" path="res://Sprites/Characters/Aza/darkaza-sheet.png" id="2_khh83"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvs40"]
+atlas = ExtResource("2_khh83")
+region = Rect2(0, 0, 38, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvc38"]
+atlas = ExtResource("2_khh83")
+region = Rect2(39, 0, 38, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oa7nm"]
+atlas = ExtResource("2_khh83")
+region = Rect2(78, 0, 38, 66)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e65ea"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvs40")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvc38")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oa7nm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="DarkAza" instance=ExtResource("1_yjry3")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, 2.5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="2"]
+sprite_frames = SubResource("SpriteFrames_e65ea")
+autoplay = "default"
+frame_progress = 0.54237

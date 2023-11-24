@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://n1awb0hw2vt0"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/dream_2.gd" id="1_42ojm"]
+[ext_resource type="TileSet" uid="uid://bajxsjdwktt1w" path="res://Tilesets/Main_tileset.tres" id="1_yc3yi"]
+[ext_resource type="PackedScene" uid="uid://b7x1rppynxtu3" path="res://Scenes/Objects/player.tscn" id="2_u8jii"]
+[ext_resource type="Texture2D" uid="uid://ca8xxv75prpke" path="res://Sprites/Backgrounds/crazybg.png" id="3_lqejs"]
+[ext_resource type="PackedScene" uid="uid://bihcxqprt4bgh" path="res://Scenes/Objects/npc.tscn" id="5_7gmnk"]
+[ext_resource type="PackedScene" uid="uid://bbcbwvv3hl21u" path="res://Scenes/Objects/house_1_cat.tscn" id="6_1b0rk"]
+
+[node name="Dream2" type="Node2D" node_paths=PackedStringArray("bg_layer", "sprite", "leah", "tilemap")]
+script = ExtResource("1_42ojm")
+bg_layer = NodePath("ParallaxBackground/ParallaxLayer")
+sprite = NodePath("ParallaxBackground/ParallaxLayer/Sprite2D")
+leah = NodePath("YSortThings/NPC")
+tilemap = NodePath("TileMap")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_yc3yi")
+format = 2
+layer_0/tile_data = PackedInt32Array(2228264, 393220, 1, 655468, 393220, 1, 655469, 393220, 1, -524167, 327684, 0, -458631, 393220, 0, -458632, 262148, 1, -524168, 65540, 1, -524166, 524292, 0, -458630, 327684, 0, 262145, 524292, 1, 262146, 327684, 2, 262147, 393220, 0, 262152, 65540, 1, 327688, 393220, 0, 327689, 131076, 0, 327690, 524292, 0, 393226, 524292, 0, 327697, 393220, 0, 327698, 196612, 0, 327703, 720900, 1, 327704, 393220, 0, 327705, 196612, 0, 262174, 262148, 0, 327710, 524292, 1, 327715, 131076, 0, 393252, 327684, 0, 1310759, 524292, 1, 1245223, 393220, 1, 1245222, 720900, 1, 917542, 196612, 1, 852006, 524292, 0, 786470, 524292, 0, 458791, 720900, 1, 458792, 131076, 0, 1769513, 262148, 0, 1835048, 196612, 0, 1900584, 393220, 2, 2162727, 393220, 1, 2490407, 262148, 1, 2555943, 327684, 1, 2555944, 327684, 2, 2621480, 393220, 0, 2883625, 393220, 1, 2949161, 393220, 1, 2949162, 393220, 0, 3145773, 393220, 0, 3211309, 720900, 1, 3211310, 720900, 0, 3407922, 524292, 0, 3473458, 720900, 0, 3473459, 131076, 0, 3670074, 327684, 1, 3735611, 196612, 0, 3735612, 720900, 0, 3735618, 65540, 1, 3735619, 65540, 0, 3539017, 524292, 1, 3604553, 720900, 0, 3473487, 327684, 2, 3407951, 262148, 2, 3407952, 65540, 1, 3211350, 393220, 0, 3211353, 196612, 0, 3014748, 393220, 2, 2883678, 262148, 0, 2621538, 720900, 1, 2490467, 524292, 0, 2097253, 393220, 1, 2293861, 262148, 0, 1376360, 131076, 1, 1507432, 65540, 0, 1572968, 327684, 1, 1835112, 720900, 1, 721005, 393220, 0, 786540, 196612, 0, 852076, 524292, 1, 852075, 196612, 0, 1048680, 393220, 2, 393329, 131076, 1, 524400, 196612, 0, 131188, 524292, 0, 131189, 196612, 1, 119, 393220, 1, -393096, 4, 65539, -393095, 4, 65540, -393094, 4, 65539, -524169, 4, 131076, -458633, 4, 131075, -524165, 4, 196612, -458629, 4, 196612, -589704, 4, 3, -589703, 4, 3, -589702, 4, 2)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(2, 1.5)
+motion_mirroring = Vector2(1152, 648)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("3_lqejs")
+centered = false
+
+[node name="YSortThings" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="NPC" parent="YSortThings" instance=ExtResource("5_7gmnk")]
+position = Vector2(1943, -119)
+dialogue_name = "dream_2_leah"
+
+[node name="Player" parent="YSortThings" instance=ExtResource("2_u8jii")]
+speed_states = {
+"run": 100,
+"sneak": 50,
+"walk": 100
+}
+
+[node name="house1_cat" parent="." instance=ExtResource("6_1b0rk")]
+position = Vector2(1022, 973)
+dialogue_name = "dream_2_cat"
+
+[connection signal="dialogue_ended" from="YSortThings/NPC" to="." method="_on_npc_dialogue_ended"]
+[connection signal="interacted" from="YSortThings/NPC" to="." method="_on_npc_interacted"]

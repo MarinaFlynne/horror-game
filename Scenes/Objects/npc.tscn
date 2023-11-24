@@ -5,11 +5,8 @@
 
 [node name="NPC" instance=ExtResource("1_smmv3")]
 
-[node name="CollisionShape2D" parent="." index="0"]
-position = Vector2(10, 10)
-
 [node name="Sprite2D" parent="." index="1"]
-position = Vector2(10, 3)
+position = Vector2(0, -5)
 texture = ExtResource("2_ssxt1")
 
 [node name="ColorRect" type="ColorRect" parent="." index="2"]
