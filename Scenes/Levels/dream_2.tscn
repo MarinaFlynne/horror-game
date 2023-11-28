@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://n1awb0hw2vt0"]
+[gd_scene load_steps=8 format=3 uid="uid://n1awb0hw2vt0"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/dream_2.gd" id="1_42ojm"]
 [ext_resource type="TileSet" uid="uid://bajxsjdwktt1w" path="res://Tilesets/Main_tileset.tres" id="1_yc3yi"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ca8xxv75prpke" path="res://Sprites/Backgrounds/crazybg.png" id="3_lqejs"]
 [ext_resource type="PackedScene" uid="uid://bihcxqprt4bgh" path="res://Scenes/Objects/npc.tscn" id="5_7gmnk"]
 [ext_resource type="PackedScene" uid="uid://bbcbwvv3hl21u" path="res://Scenes/Objects/house_1_cat.tscn" id="6_1b0rk"]
+[ext_resource type="AudioStream" uid="uid://c3uatlic60iqr" path="res://Sounds/creepy_windcut.wav" id="7_ik75d"]
 
 [node name="Dream2" type="Node2D" node_paths=PackedStringArray("bg_layer", "sprite", "leah", "tilemap")]
 script = ExtResource("1_42ojm")
@@ -47,5 +48,17 @@ speed_states = {
 position = Vector2(1022, 973)
 dialogue_name = "dream_2_cat"
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ik75d")
+volume_db = -22.082
+pitch_scale = 1.11
+autoplay = true
+
+[node name="PitchChangeTimer" type="Timer" parent="."]
+wait_time = 5.304
+one_shot = true
+autostart = true
+
 [connection signal="dialogue_ended" from="YSortThings/NPC" to="." method="_on_npc_dialogue_ended"]
 [connection signal="interacted" from="YSortThings/NPC" to="." method="_on_npc_interacted"]
+[connection signal="timeout" from="PitchChangeTimer" to="." method="_on_pitch_change_timer_timeout"]

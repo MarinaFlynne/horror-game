@@ -43,9 +43,15 @@ _data = {
 script = ExtResource("1_7qkxw")
 Scenes = {
 "alarm_rings": &"res://Scenes/Levels/alarm_rings.tscn",
+"beach": &"res://Scenes/Levels/beach.tscn",
+"blackout": &"res://Scenes/Levels/blackout.tscn",
+"blackout_2": &"res://Scenes/Levels/blackout_2.tscn",
 "dream_2": &"res://Scenes/Levels/dream_2.tscn",
+"final_escape": &"res://Scenes/Levels/final_escape.tscn",
+"game_end": &"res://Scenes/Levels/game_end.tscn",
 "house_dream": &"res://Scenes/Levels/house_dream.tscn",
 "house_real": &"res://Scenes/Levels/house_real.tscn",
+"main_menu": &"res://Scenes/Levels/main_menu.tscn",
 "nightmare_wakeup": &"res://Scenes/Levels/nightmare_wakeup.tscn",
 "start_dream": &"res://Scenes/Levels/start_dream.tscn",
 "why": &"res://Scenes/Levels/why.tscn"

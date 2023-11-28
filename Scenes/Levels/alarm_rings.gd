@@ -17,4 +17,4 @@ func _ready():
 	%Player.disable_movement()
 	bed.set_collision_layer_value(3, false)
 	await get_tree().create_timer(1).timeout
-	SceneManager.SwitchScene("house_real", true)
+	SceneManager.SwitchScene("dream_2", true)

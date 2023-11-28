@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://54dapf6qeevr"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/blackout.gd" id="1_gxlwi"]
+[ext_resource type="Texture2D" uid="uid://b3kcubo3cge72" path="res://Sprites/Characters/Leah/Leah.png" id="1_w8q4o"]
+[ext_resource type="Texture2D" uid="uid://brepnbua4md0i" path="res://Sprites/Characters/Aza/AzaFrontIdle.png" id="2_83kt8"]
+
+[node name="Blackout" type="Node2D" node_paths=PackedStringArray("leah", "aza")]
+script = ExtResource("1_gxlwi")
+leah = NodePath("CanvasLayer/leah")
+aza = NodePath("CanvasLayer/aza")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="leah" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(711, 310)
+scale = Vector2(-14.0406, 12.8925)
+texture = ExtResource("1_w8q4o")
+
+[node name="aza" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(420, 323)
+scale = Vector2(10.4908, -11.0329)
+texture = ExtResource("2_83kt8")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://gb1y3qlb80rs"]
+[gd_scene load_steps=19 format=3 uid="uid://gb1y3qlb80rs"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/alarm_rings.gd" id="1_xh5cu"]
 [ext_resource type="TileSet" uid="uid://bajxsjdwktt1w" path="res://Tilesets/Main_tileset.tres" id="2_p61w2"]
@@ -13,7 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://neacpyajixgt" path="res://Scenes/Objects/chair_back.tscn" id="13_gdkce"]
 [ext_resource type="PackedScene" uid="uid://bbcbwvv3hl21u" path="res://Scenes/Objects/house_1_cat.tscn" id="15_4ssnp"]
 [ext_resource type="PackedScene" uid="uid://d0b6qnwb2sxic" path="res://Scenes/Characters/thing.tscn" id="16_jj3u1"]
+[ext_resource type="PackedScene" uid="uid://b7374jg1xfsy8" path="res://Scenes/Objects/window_day.tscn" id="16_m1v2k"]
 [ext_resource type="PackedScene" uid="uid://b7x1rppynxtu3" path="res://Scenes/Objects/player.tscn" id="17_5ins3"]
+[ext_resource type="Texture2D" uid="uid://cn2krp3yniak7" path="res://Sprites/Other/circlelight2.png" id="17_8bprw"]
 [ext_resource type="Resource" uid="uid://sglci6q3207a" path="res://Dialogue/main.dialogue" id="18_drclh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ts3tu"]
@@ -115,5 +117,13 @@ collision_mask = 2
 position = Vector2(-48, -25.5)
 shape = SubResource("RectangleShape2D_ts3tu")
 
+[node name="WindowDay" parent="Objects" instance=ExtResource("16_m1v2k")]
+position = Vector2(77, -40)
+
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.423529, 0.423529, 0.423529, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(77, -24)
+texture = ExtResource("17_8bprw")
+texture_scale = 2.03

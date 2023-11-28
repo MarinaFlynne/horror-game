@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7374jg1xfsy8"]
+
+[ext_resource type="Texture2D" uid="uid://sd6vv1faaiw8" path="res://Sprites/Objects/windowday.png" id="1_bym24"]
+
+[node name="WindowDay" type="Sprite2D"]
+texture = ExtResource("1_bym24")

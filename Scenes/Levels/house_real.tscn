@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cows2iogpw5xb"]
+[gd_scene load_steps=23 format=3 uid="uid://cows2iogpw5xb"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/house_real.gd" id="1_0jt1q"]
 [ext_resource type="TileSet" uid="uid://bajxsjdwktt1w" path="res://Tilesets/Main_tileset.tres" id="1_eyf36"]
@@ -19,6 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://dfgoahafydvtr" path="res://Sprites/Objects/chair_back_back_only.png" id="15_qff8p"]
 [ext_resource type="Texture2D" uid="uid://dspmd6xml5c0g" path="res://Sprites/Objects/thing1.png" id="17_tau43"]
 [ext_resource type="Texture2D" uid="uid://cdpmsv64o5bs0" path="res://Sprites/Objects/thing2.png" id="18_i1smg"]
+[ext_resource type="PackedScene" uid="uid://bwoetwu5cmbpu" path="res://Scenes/Objects/window_night.tscn" id="19_men77"]
+[ext_resource type="AudioStream" uid="uid://blfyghcpm0xi3" path="res://Sounds/clock.wav" id="20_fct5h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_03aji"]
 
@@ -163,12 +165,23 @@ texture = ExtResource("17_tau43")
 position = Vector2(-22, 672)
 texture = ExtResource("18_i1smg")
 
+[node name="WindowNight" parent="Objects" instance=ExtResource("19_men77")]
+position = Vector2(77, -40)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Objects"]
+position = Vector2(-69, 629)
+stream = ExtResource("20_fct5h")
+volume_db = 5.699
+pitch_scale = 0.92
+autoplay = true
+max_distance = 500.0
+
 [node name="Player" parent="." instance=ExtResource("7_mmy1h")]
 unique_name_in_owner = true
 position = Vector2(142, 55)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.129412, 0.133333, 0.113725, 1)
+color = Color(0.0862745, 0.133333, 0.188235, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

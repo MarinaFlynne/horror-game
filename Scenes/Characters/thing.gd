@@ -4,7 +4,7 @@ extends "res://Scenes/Objects/interactable_object.gd"
 @export var player: CharacterBody2D
 @onready var timer: Timer = $BlinkTimer
 
-var blinking_enabled
+var blinking_enabled = false
 
 signal teleported_player()
 

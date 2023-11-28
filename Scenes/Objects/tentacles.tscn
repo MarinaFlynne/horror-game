@@ -1,0 +1,79 @@
+[gd_scene load_steps=12 format=3 uid="uid://bjfrydfoeu4dt"]
+
+[ext_resource type="PackedScene" uid="uid://d2fcgdlk7t8wq" path="res://Scenes/Objects/interactable_object.tscn" id="1_ogdu1"]
+[ext_resource type="Texture2D" uid="uid://c1tq8mknd4e1m" path="res://Sprites/Objects/tentacles.png" id="2_fi86k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_apck2"]
+atlas = ExtResource("2_fi86k")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5xkv"]
+atlas = ExtResource("2_fi86k")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oon3m"]
+atlas = ExtResource("2_fi86k")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnxh4"]
+atlas = ExtResource("2_fi86k")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ev34"]
+atlas = ExtResource("2_fi86k")
+region = Rect2(64, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06cok"]
+atlas = ExtResource("2_fi86k")
+region = Rect2(80, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_byd8s"]
+atlas = ExtResource("2_fi86k")
+region = Rect2(96, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbl8m"]
+atlas = ExtResource("2_fi86k")
+region = Rect2(112, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r1o6p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_apck2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5xkv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oon3m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnxh4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ev34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06cok")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_byd8s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bbl8m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="Tentacles" instance=ExtResource("1_ogdu1")]
+interact_sound = "res://Sounds/433839__archos__slime-28.wav"
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, 3)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="2"]
+sprite_frames = SubResource("SpriteFrames_r1o6p")
+autoplay = "default"
+frame_progress = 0.0110359

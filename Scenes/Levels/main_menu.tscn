@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://d2ufqucax06ut"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/main_menu.gd" id="1_6svgk"]
+[ext_resource type="AudioStream" uid="uid://e5o8du3ewrws" path="res://Music/title_theme.wav" id="1_knt1k"]
+[ext_resource type="FontFile" uid="uid://dsav0a6ex8w7c" path="res://Fonts/Awexbmp.ttf" id="2_l0kkm"]
+[ext_resource type="Texture2D" uid="uid://bmnbc27dooy" path="res://Sprites/Backgrounds/titlebg.png" id="4_68cwc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_q7tvi"]
+font_size = 200
+outline_size = 20
+outline_color = Color(0.141176, 0.0392157, 0.25098, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wbglg"]
+font_size = 30
+outline_size = 10
+outline_color = Color(0.141176, 0.0392157, 0.25098, 1)
+
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("p_layer")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6svgk")
+p_layer = NodePath("ParallaxBackground/ParallaxLayer")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_knt1k")
+autoplay = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 305.0
+offset_top = 76.0
+offset_right = 869.0
+offset_bottom = 279.0
+theme_override_fonts/font = ExtResource("2_l0kkm")
+theme_override_font_sizes/font_size = 200
+text = "Alone"
+label_settings = SubResource("LabelSettings_q7tvi")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 489.0
+offset_top = 462.0
+offset_right = 739.0
+offset_bottom = 505.0
+theme_override_fonts/font = ExtResource("2_l0kkm")
+theme_override_font_sizes/font_size = 40
+text = "Press Space"
+label_settings = SubResource("LabelSettings_wbglg")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1313, 781)
+
+[node name="Bg" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("4_68cwc")
+centered = false
+flip_h = true

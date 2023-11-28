@@ -1,10 +1,9 @@
 ~ start_dream
-You: wh..
-You: where am i?
+..
 => END
 
 ~ start_dream_liar
-liar. liar. liar. liar. liar. liar
+liar liar liar liar liar liar
 LIAR LIAR LIAR LIAR
 
 => END
@@ -15,9 +14,14 @@ why cant you just obey?
 
 => END!
 
+~ tentacle_what_do_you_want
+..
+what do you want?
+=> END!
+
 ~ start_dream_leah
 
-h-hey
+where have you been?
 
 => END!
 
@@ -110,4 +114,27 @@ Mother: We just want what's best for you. Don't you understand?
 
 ~ house_dream_get_away
 You: GET AWAY FROM ME
+=> END!
+
+~ game_end_leah
+Leah: it's really nice to see you again. Are you doing okay?
+do wait(1.5)
+You: yeah, I think so
+do wait(3)
+Leah: Okay well you'll never guess what I saw today
+do wait(0.5)
+You: what did you see?
+do wait(0.3)
+Leah: the cutest most adorable kitty ever. They were so friendly
+do wait(0.5)
+Leah: I'd love to adopt a cat someday
+do wait(0.3)
+You: they're pretty fun!
+do wait(2)
+Leah: what happened at your place anyway?
+You: oh yknow, I just couldn't handle the constant pressure from my parents
+do wait(2)
+Leah: well, just remember that I'm always here for you
+do wait(1)
+You: thanks. I'm so glad I get to see you again
 => END!
