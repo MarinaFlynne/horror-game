@@ -23,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://u33haq16edbw" path="res://Sprites/Backgrounds/blackbg.png" id="20_5eavt"]
 [ext_resource type="PackedScene" uid="uid://bwoetwu5cmbpu" path="res://Scenes/Objects/window_night.tscn" id="20_wskh6"]
 [ext_resource type="AudioStream" uid="uid://blfyghcpm0xi3" path="res://Sounds/clock.wav" id="21_lx26l"]
-[ext_resource type="AudioStream" uid="uid://o07e5kqc8tfl" path="res://Music/its_not_okay.wav" id="23_7ahbg"]
+[ext_resource type="AudioStream" uid="uid://mbhrfxbodl8j" path="res://Music/house_dream.wav" id="24_p23tk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_03aji"]
 
@@ -218,8 +218,8 @@ texture = ExtResource("20_5eavt")
 centered = false
 
 [node name="BG Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("23_7ahbg")
-pitch_scale = 0.62
+stream = ExtResource("24_p23tk")
+pitch_scale = 1.2
 autoplay = true
 
 [connection signal="body_entered" from="Objects/LightOnArea" to="." method="_on_light_on_area_body_entered"]

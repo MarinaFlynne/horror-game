@@ -1,13 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://4w2gm8a4ka40"]
+[gd_scene load_steps=9 format=3 uid="uid://4w2gm8a4ka40"]
 
 [ext_resource type="TileSet" uid="uid://bajxsjdwktt1w" path="res://Tilesets/Main_tileset.tres" id="1_o0m3a"]
 [ext_resource type="Script" path="res://Scenes/Levels/final_escape.gd" id="1_pj164"]
 [ext_resource type="Texture2D" uid="uid://b6gqx1vcgqwic" path="res://Sprites/Backgrounds/forestbg.png" id="2_yq14p"]
 [ext_resource type="PackedScene" uid="uid://b7x1rppynxtu3" path="res://Scenes/Objects/player.tscn" id="3_48q0g"]
 [ext_resource type="Texture2D" uid="uid://mgr4xb24tjg" path="res://Sprites/Backgrounds/forestbgtrees.png" id="4_wekqx"]
+[ext_resource type="AudioStream" uid="uid://1eyef5hgnhfe" path="res://Music/escape.wav" id="6_fq3cr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rxwlp"]
 size = Vector2(39, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jksnk"]
+size = Vector2(69, 49)
 
 [node name="FinalEscape" type="Node2D" node_paths=PackedStringArray("para1", "para2")]
 script = ExtResource("1_pj164")
@@ -43,17 +47,12 @@ layer_3/modulate = Color(1, 1, 1, 1)
 layer_3/y_sort_enabled = true
 layer_3/y_sort_origin = 0
 layer_3/z_index = 0
-layer_3/tile_data = PackedInt32Array(1245175, 5, 0, 983026, 5, 0, 786421, 5, 0, 458743, 5, 0, 393203, 5, 0, 65522, 5, 0, -14, 5, 0, -131081, 5, 0, -393230, 5, 0, -720908, 5, 0, -786444, 5, 0, -720906, 5, 0, -458760, 5, 0, -983048, 5, 0, -1376264, 5, 0, -1114108, 5, 0, -917504, 5, 0, -851968, 5, 0, -655356, 5, 0, -1179640, 5, 0, -1310706, 5, 0, -1507308, 5, 0, -1310697, 5, 0, -1638374, 5, 0, -1769446, 5, 0, -1966070, 5, 0, -1835003, 5, 0, -1703936, 5, 0, -1441798, 5, 0, -1376252, 5, 0, -1834984, 5, 0, -917493, 5, 0, -720887, 5, 0, -589818, 5, 0, -327675, 5, 0, -262142, 5, 0, -65533, 5, 0, -196598, 5, 0, -524275, 5, 0, -65524, 5, 0, 131073, 5, 0, 655362, 5, 0, 1179652, 5, 0, 917515, 5, 0, 1114135, 5, 0, 262161, 5, 0, -1048560, 5, 0, -1310702, 5, 0, -1245164, 5, 0, -1048555, 5, 0, -983023, 5, 0, -1245173, 5, 0, -1769462, 5, 0, -2097138, 5, 0, -2293741, 5, 0, -2031597, 5, 0, -2031598, 5, 0, -1834992, 5, 0, -2359268, 5, 0, -2228190, 5, 0, -2097123, 5, 0, -2293737, 5, 0, -2686953, 5, 0, -2228198, 5, 0, -2097130, 5, 0, -1572833, 5, 0, -1769443, 5, 0, -1769437, 5, 0, -1638367, 5, 0, -1834975, 5, 0, -2162650, 5, 0, -1507291, 5, 0, -2228183, 5, 0, -2490326, 5, 0, -2686940, 5, 0, -2883545, 5, 0, -2949076, 5, 0, 1245184, 5, 0)
+layer_3/tile_data = PackedInt32Array(1245175, 5, 0, 983026, 5, 0, 786421, 5, 0, 458743, 5, 0, 393203, 5, 0, 65522, 5, 0, -14, 5, 0, -131081, 5, 0, -393230, 5, 0, -720908, 5, 0, -786444, 5, 0, -720906, 5, 0, -458760, 5, 0, -983048, 5, 0, -1376264, 5, 0, -1114108, 5, 0, -917504, 5, 0, -851968, 5, 0, -655356, 5, 0, -1179640, 5, 0, -1310706, 5, 0, -1507308, 5, 0, -1310697, 5, 0, -1638374, 5, 0, -1769446, 5, 0, -1966070, 5, 0, -1835003, 5, 0, -1703936, 5, 0, -1441798, 5, 0, -1376252, 5, 0, -1834984, 5, 0, -917493, 5, 0, -720887, 5, 0, -589818, 5, 0, -327675, 5, 0, -262142, 5, 0, -65533, 5, 0, -196598, 5, 0, -524275, 5, 0, -65524, 5, 0, 131073, 5, 0, 655362, 5, 0, 1179652, 5, 0, 917515, 5, 0, 1114135, 5, 0, 262161, 5, 0, -1048560, 5, 0, -1310702, 5, 0, -1245164, 5, 0, -1048555, 5, 0, -983023, 5, 0, -1245173, 5, 0, -1769462, 5, 0, -2097138, 5, 0, -2293741, 5, 0, -2031597, 5, 0, -2031598, 5, 0, -1834992, 5, 0, -2359268, 5, 0, -2228190, 5, 0, -2097123, 5, 0, -2293737, 5, 0, -2686953, 5, 0, -2228198, 5, 0, -2097130, 5, 0, -1572833, 5, 0, -1769443, 5, 0, -1769437, 5, 0, -1638367, 5, 0, -1834975, 5, 0, -2162650, 5, 0, -1507291, 5, 0, -2228183, 5, 0, -2490326, 5, 0, -2686940, 5, 0, -2883545, 5, 0, -2949076, 5, 0)
 
 [node name="Player" parent="ysort" instance=ExtResource("3_48q0g")]
 unique_name_in_owner = true
 y_sort_enabled = true
 position = Vector2(-20, 278)
-speed_states = {
-"run": 100,
-"sneak": 50,
-"walk": 110
-}
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -83,4 +82,48 @@ collision_mask = 2
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_rxwlp")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_fq3cr")
+pitch_scale = 1.19
+autoplay = true
+
+[node name="D1" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="D1"]
+position = Vector2(-33, 171)
+shape = SubResource("RectangleShape2D_jksnk")
+
+[node name="D2" type="Area2D" parent="."]
+position = Vector2(-2, -279)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="D2"]
+position = Vector2(-33, 171)
+shape = SubResource("RectangleShape2D_jksnk")
+
+[node name="D3" type="Area2D" parent="."]
+position = Vector2(80, -548)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="D3"]
+position = Vector2(-33, 171)
+shape = SubResource("RectangleShape2D_jksnk")
+
+[node name="D4" type="Area2D" parent="."]
+position = Vector2(501, -634)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="D4"]
+position = Vector2(-33, 171)
+shape = SubResource("RectangleShape2D_jksnk")
+
 [connection signal="body_entered" from="GameEndArea" to="." method="_on_game_end_area_body_entered"]
+[connection signal="body_entered" from="D1" to="." method="_on_d_1_body_entered"]
+[connection signal="body_entered" from="D2" to="." method="_on_d_2_body_entered"]
+[connection signal="body_entered" from="D3" to="." method="_on_d_3_body_entered"]
+[connection signal="body_entered" from="D4" to="." method="_on_d_4_body_entered"]

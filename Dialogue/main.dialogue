@@ -52,13 +52,11 @@ You: Just a little plant.
 => END!
 
 ~ wall_bang
-TODO: Insert wall bang sound effect
 *You bang your head against the wall*
 => END
 
 ~ dream_2_cat
-mrow
-was it worth it?
+Why do you care about her?
 
 => END
 
@@ -67,9 +65,7 @@ leah: why..
 leah: how could you
 leah: how could you abandon me..
 leah: AREN'T WE FRIENDS
-
-
-=> END!
+=> END
 
 ~ alarm_rings
 You: *yawn*
@@ -137,4 +133,47 @@ do wait(2)
 Leah: well, just remember that I'm always here for you
 do wait(1)
 You: thanks. I'm so glad I get to see you again
+=> END!
+
+
+~ escape_d1
+You: Am I really doing this?
+do wait(1)
+You: Yes, I have to get away
+You: I have to find her again
+=> END
+
+~ escape_d2
+You: What if she doesn't want to see me?
+=> END
+
+~ escape_d3
+*cough* *cough*
+do wait(1)
+You: Where am I even going
+
+=> END
+
+~ escape_d4
+You: This is it
+do wait(1.5)
+You: Im finally free
+=> END
+
+~ need_to_find_her
+You: Im so sorry leah..
+do wait(2)
+You: please forgive me
+=> END
+
+~ leahh
+You: LEEEAAAAHHHHH
+=> END!
+
+~ thing_3
+Don't you love us?
+=> END!
+
+~ thing_2
+We just want what's best for you
 => END!

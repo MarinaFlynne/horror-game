@@ -77,7 +77,7 @@ layer_1/modulate = Color(1, 1, 1, 1)
 layer_1/y_sort_enabled = true
 layer_1/y_sort_origin = 0
 layer_1/z_index = 0
-layer_1/tile_data = PackedInt32Array(51, 5, 0, 58, 5, 0, -262086, 5, 0, -131011, 5, 0, 61, 5, 0, -65472, 5, 0, 53, 5, 0, -262092, 5, 0, -393161, 5, 0, -327624, 5, 0, -262080, 5, 0, -393151, 5, 0, -458694, 5, 0, -393155, 5, 0, -393145, 5, 0, -196540, 5, 0, -131004, 5, 0, 67, 5, 0, 65603, 5, 0, -131002, 5, 0, -327609, 5, 0, -327606, 5, 0, -130997, 5, 0, 131150, 5, 0, 196682, 5, 0, 65610, 5, 0, 196684, 5, 0, 327757, 5, 0, 393293, 5, 0, 458826, 5, 0, 524362, 5, 0, 524358, 5, 0, 458824, 5, 0, 458821, 5, 0, 393282, 5, 0, 458817, 5, 0, 524351, 5, 0, 327738, 5, 0, 524345, 5, 0, 524348, 5, 0, 393277, 5, 0, 655428, 5, 0, 655426, 5, 0, 655422, 5, 0, 720954, 5, 0, 655413, 5, 0, 589876, 5, 0, 458806, 5, 0, 458805, 5, 0, 458802, 5, 0, 458800, 5, 0, 589871, 5, 0, 655408, 5, 0, 655411, 5, 0, 589879, 5, 0, 720949, 5, 0, 655404, 5, 0, 524330, 5, 0, 393259, 5, 0, 393261, 5, 0, -131024, 5, 0, 48, 5, 0, 47, 5, 0, -65491, 5, 0, -65493, 5, 0, -327634, 5, 0, -327632, 5, 0, -327631, 5, 0, -196557, 5, 0, -131022, 5, 0, -65486, 5, 0, -65487, 5, 0, 42, 5, 0, -65496, 5, 0, -262103, 5, 0, -327638, 5, 0, -327635, 5, 0, -327603, 5, 0, -196530, 5, 0, -65457, 5, 0, 65618, 5, 0, 131154, 5, 0, 196690, 5, 0, 327761, 5, 0, 393296, 5, 0, 458832, 5, 0, 524367, 5, 0, 589901, 5, 0, 589898, 5, 0, 655434, 5, 0, 655433, 5, 0, 655432, 5, 0, 720967, 5, 0, 786504, 5, 0, 786505, 5, 0, 786506, 5, 0, 720973, 5, 0, 720975, 5, 0, 655439, 5, 0, 655440, 5, 0, 589904, 5, 0, 589905, 5, 0, 524370, 5, 0, 458834, 5, 0, 393299, 5, 0, 262228, 5, 0, 131156, 5, 0, -65452, 5, 0, -196526, 5, 0, -327600, 5, 0, -196529, 5, 0, -130992, 5, 0, 131152, 5, 0, 262223, 5, 0, 458790, 5, 0, 393255, 5, 0, 1114130, 5, 0, 983065, 5, 0, 1114138, 5, 0, 1245211, 5, 0, 1179678, 5, 0, 983071, 5, 0, 1114145, 5, 0, 1179682, 5, 0, 1179683, 5, 0, 983075, 5, 0, 917540, 5, 0, 917543, 5, 0, 1048616, 5, 0, 1114152, 5, 0, 1245224, 5, 0, 1179691, 5, 0, 1245231, 5, 0, 1310767, 5, 0, 1441839, 5, 0, 1507375, 5, 0, 1572911, 5, 0, 1572912, 5, 0, 1638447, 5, 0, 1703982, 5, 0, 1703981, 5, 0, 1703980, 5, 0, 1441834, 5, 0, 851996, 5, 0, 851990, 5, 0, 917521, 5, 0, 655376, 5, 0, 655380, 5, 0, 786451, 5, 0, 851987, 5, 0, 851983, 5, 0, 983055, 5, 0, 1048591, 5, 0, 1179662, 5, 0, 1376270, 5, 0, 1441806, 5, 0, 1441807, 5, 0, 1245200, 5, 0, 1048596, 5, 0, 1572878, 5, 0, 1638418, 5, 0, 1507349, 5, 0, 1572889, 5, 0, 1703962, 5, 0, 1638430, 5, 0, 1507359, 5, 0, 1507361, 5, 0, 1572898, 5, 0, 1769507, 5, 0, 1572900, 5, 0, 1703973, 5, 0, 1835045, 5, 0, 2031653, 5, 0, 1966114, 5, 0, 2031650, 5, 0, 1835041, 5, 0, 1703968, 5, 0, 1835038, 5, 0, 1900574, 5, 0, 1900573, 5, 0, 1966108, 5, 0, 2031644, 5, 0, 2031643, 5, 0, 2097178, 5, 0, 2031647, 5, 0, 1900570, 5, 0, 1835031, 5, 0, 1703955, 5, 0, 1900561, 5, 0, 1966094, 5, 0, 1703950, 5, 0, 1703953, 5, 0, 1900563, 5, 0, 2031635, 5, 0, 1769493, 5, 0, 1572886, 5, 0, 1638424, 5, 0, 2031639, 5, 0, 1638427, 5, 0)
+layer_1/tile_data = PackedInt32Array(51, 5, 0, 58, 5, 0, -262086, 5, 0, -131011, 5, 0, 61, 5, 0, -65472, 5, 0, 53, 5, 0, -262092, 5, 0, -393161, 5, 0, -327624, 5, 0, -262080, 5, 0, -393151, 5, 0, -458694, 5, 0, -393155, 5, 0, -393145, 5, 0, -196540, 5, 0, -131004, 5, 0, 67, 5, 0, 65603, 5, 0, -131002, 5, 0, -327609, 5, 0, -327606, 5, 0, -130997, 5, 0, 131150, 5, 0, 196682, 5, 0, 65610, 5, 0, 196684, 5, 0, 327757, 5, 0, 393293, 5, 0, 458826, 5, 0, 524362, 5, 0, 524358, 5, 0, 458824, 5, 0, 458821, 5, 0, 393282, 5, 0, 458817, 5, 0, 524351, 5, 0, 327738, 5, 0, 524345, 5, 0, 524348, 5, 0, 393277, 5, 0, 655428, 5, 0, 655426, 5, 0, 655422, 5, 0, 720954, 5, 0, 655413, 5, 0, 589876, 5, 0, 458806, 5, 0, 458805, 5, 0, 458802, 5, 0, 458800, 5, 0, 589871, 5, 0, 655408, 5, 0, 655411, 5, 0, 589879, 5, 0, 720949, 5, 0, 655404, 5, 0, 524330, 5, 0, 393259, 5, 0, 393261, 5, 0, -131024, 5, 0, 48, 5, 0, 47, 5, 0, -65491, 5, 0, -65493, 5, 0, -327634, 5, 0, -327632, 5, 0, -327631, 5, 0, -196557, 5, 0, -131022, 5, 0, -65486, 5, 0, -65487, 5, 0, 42, 5, 0, -65496, 5, 0, -262103, 5, 0, -327638, 5, 0, -327635, 5, 0, -327603, 5, 0, -196530, 5, 0, -65457, 5, 0, 65618, 5, 0, 131154, 5, 0, 196690, 5, 0, 327761, 5, 0, 393296, 5, 0, 458832, 5, 0, 524367, 5, 0, 589901, 5, 0, 589898, 5, 0, 655434, 5, 0, 655433, 5, 0, 655432, 5, 0, 720967, 5, 0, 786504, 5, 0, 786505, 5, 0, 786506, 5, 0, 720973, 5, 0, 720975, 5, 0, 655439, 5, 0, 655440, 5, 0, 589904, 5, 0, 589905, 5, 0, 524370, 5, 0, 458834, 5, 0, 393299, 5, 0, 262228, 5, 0, 131156, 5, 0, -65452, 5, 0, -196526, 5, 0, -327600, 5, 0, -196529, 5, 0, -130992, 5, 0, 131152, 5, 0, 262223, 5, 0, 458790, 5, 0, 393255, 5, 0, 1114130, 5, 0, 983065, 5, 0, 1114138, 5, 0, 1245211, 5, 0, 1179678, 5, 0, 983071, 5, 0, 1114145, 5, 0, 1179682, 5, 0, 1179683, 5, 0, 983075, 5, 0, 917540, 5, 0, 917543, 5, 0, 1048616, 5, 0, 1114152, 5, 0, 1245224, 5, 0, 1179691, 5, 0, 1441834, 5, 0, 1376270, 5, 0, 1441806, 5, 0, 1441807, 5, 0, 1245200, 5, 0, 1048596, 5, 0, 1572878, 5, 0, 1638418, 5, 0, 1507349, 5, 0, 1572889, 5, 0, 1703962, 5, 0, 1638430, 5, 0, 1507359, 5, 0, 1507361, 5, 0, 1572898, 5, 0, 1769507, 5, 0, 1572900, 5, 0, 1703973, 5, 0, 1835045, 5, 0, 2031653, 5, 0, 1966114, 5, 0, 2031650, 5, 0, 1835041, 5, 0, 1703968, 5, 0, 1835038, 5, 0, 1900574, 5, 0, 1900573, 5, 0, 1966108, 5, 0, 2031644, 5, 0, 2031643, 5, 0, 2097178, 5, 0, 2031647, 5, 0, 1900570, 5, 0, 1835031, 5, 0, 1703955, 5, 0, 1900561, 5, 0, 1966094, 5, 0, 1703950, 5, 0, 1703953, 5, 0, 1900563, 5, 0, 2031635, 5, 0, 1769493, 5, 0, 1572886, 5, 0, 1638424, 5, 0, 2031639, 5, 0, 1638427, 5, 0, 1703981, 5, 0, 1703980, 5, 0)
 layer_2/name = ""
 layer_2/enabled = true
 layer_2/modulate = Color(1, 1, 1, 1)
@@ -114,18 +114,23 @@ speed_states = {
 y_sort_enabled = true
 
 [node name="Bed" parent="Y-sort group/Objects2" instance=ExtResource("3_0bhxg")]
+z_index = -1
 position = Vector2(175, 21)
 
 [node name="Nightstand" parent="Y-sort group/Objects2" instance=ExtResource("4_1exr5")]
+z_index = -1
 position = Vector2(143, 9)
 
 [node name="AlarmClock" parent="Y-sort group/Objects2" instance=ExtResource("5_so1nv")]
+z_index = -1
 position = Vector2(143, 3)
 
 [node name="Table" parent="Y-sort group/Objects2" instance=ExtResource("6_svg5h")]
+z_index = -1
 position = Vector2(28, 9)
 
 [node name="Plant" parent="Y-sort group/Objects2" instance=ExtResource("7_j83j2")]
+z_index = -1
 position = Vector2(27, 10)
 
 [node name="Streetlamp" parent="Y-sort group/Objects2" instance=ExtResource("8_od0cc")]
@@ -195,11 +200,20 @@ position = Vector2(-124, 1786)
 position = Vector2(60, 953)
 teleport_location = NodePath("../TeleportLoc1")
 player = NodePath("../../Player")
+dialogue_name = "thing_2"
 
 [node name="Thing3" parent="Y-sort group/Objects2" node_paths=PackedStringArray("teleport_location", "player") instance=ExtResource("10_mi1a6")]
 position = Vector2(987, 746)
 teleport_location = NodePath("../TeleportLoc1")
 player = NodePath("../../Player")
+dialogue_name = "thing_3"
+
+[node name="Thing5" parent="Y-sort group/Objects2" node_paths=PackedStringArray("teleport_location", "player") instance=ExtResource("10_mi1a6")]
+position = Vector2(1473, 759)
+scale = Vector2(0.519231, 1.55368)
+teleport_location = NodePath("../TeleportLoc1")
+player = NodePath("../../Player")
+dialogue_name = "thing_3"
 
 [node name="Thing" parent="Y-sort group/Objects2" node_paths=PackedStringArray("teleport_location", "player") instance=ExtResource("10_mi1a6")]
 position = Vector2(1126, 54)
@@ -304,6 +318,24 @@ panning_strength = 0.0
 [node name="Tentacles" parent="Y-sort group/Objects2" instance=ExtResource("16_ilinn")]
 position = Vector2(-38, 1819)
 
+[node name="Tentacles20" parent="Y-sort group/Objects2" instance=ExtResource("16_ilinn")]
+position = Vector2(126, 957)
+
+[node name="Tentacles21" parent="Y-sort group/Objects2" instance=ExtResource("16_ilinn")]
+position = Vector2(331, 930)
+
+[node name="Tentacles22" parent="Y-sort group/Objects2" instance=ExtResource("16_ilinn")]
+position = Vector2(470, 684)
+
+[node name="Tentacles23" parent="Y-sort group/Objects2" instance=ExtResource("16_ilinn")]
+position = Vector2(986, 750)
+
+[node name="Tentacles24" parent="Y-sort group/Objects2" instance=ExtResource("16_ilinn")]
+position = Vector2(613, 366)
+
+[node name="Tentacles25" parent="Y-sort group/Objects2" instance=ExtResource("16_ilinn")]
+position = Vector2(1317, 264)
+
 [node name="Tentacles2" parent="Y-sort group/Objects2" instance=ExtResource("16_ilinn")]
 position = Vector2(103, 1603)
 
@@ -378,6 +410,7 @@ sprite_frames = SubResource("SpriteFrames_akh1n")
 
 [connection signal="teleported_player" from="Y-sort group/Objects2/Thing2" to="." method="_on_thing_teleported_player"]
 [connection signal="teleported_player" from="Y-sort group/Objects2/Thing3" to="." method="_on_thing_teleported_player"]
+[connection signal="teleported_player" from="Y-sort group/Objects2/Thing5" to="." method="_on_thing_teleported_player"]
 [connection signal="teleported_player" from="Y-sort group/Objects2/Thing" to="." method="_on_thing_teleported_player"]
 [connection signal="teleported_player" from="Y-sort group/Objects2/Thing4" to="." method="_on_thing_teleported_player"]
 [connection signal="dialogue_ended" from="Y-sort group/Objects2/Leah" to="." method="_on_leah_dialogue_ended"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bjfrydfoeu4dt"]
+[gd_scene load_steps=13 format=3 uid="uid://bjfrydfoeu4dt"]
 
 [ext_resource type="PackedScene" uid="uid://d2fcgdlk7t8wq" path="res://Scenes/Objects/interactable_object.tscn" id="1_ogdu1"]
 [ext_resource type="Texture2D" uid="uid://c1tq8mknd4e1m" path="res://Sprites/Objects/tentacles.png" id="2_fi86k"]
@@ -67,6 +67,9 @@ animations = [{
 "speed": 2.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4a0yn"]
+size = Vector2(15, 9)
+
 [node name="Tentacles" instance=ExtResource("1_ogdu1")]
 interact_sound = "res://Sounds/433839__archos__slime-28.wav"
 
@@ -77,3 +80,10 @@ position = Vector2(0, 3)
 sprite_frames = SubResource("SpriteFrames_r1o6p")
 autoplay = "default"
 frame_progress = 0.0110359
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="3"]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(-0.5, 11.5)
+shape = SubResource("RectangleShape2D_4a0yn")

@@ -29,7 +29,7 @@ func show_dialogue(title: String = "", extra_game_states: Array = []) -> void:
 		SceneManager.get_current_scene().add_child(balloon)
 		balloon.start(dialogue_resource, title, extra_game_states)
 	else:
-#		print("GameManager: New dialogue disabled. Already in dialogue.")
+		print("GameManager: New dialogue disabled. Already in dialogue.")
 		pass
 
 func _on_dialogue_ended(_resource):

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://nxb86h7j72wm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ixnk4"]
+size = Vector2(55, 42)
+
+[node name="ProximityDialogue" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-41.5, 151)
+shape = SubResource("RectangleShape2D_ixnk4")

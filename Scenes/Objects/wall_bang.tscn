@@ -4,3 +4,4 @@
 
 [node name="WallBang" instance=ExtResource("1_y7ihg")]
 dialogue_name = "wall_bang"
+interact_sound = "res://Sounds/wall_bang.wav"
