@@ -6,6 +6,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	%Bed.fix_sheet()
 	await get_tree().create_timer(2).timeout
 	GameManager.show_dialogue("start_dream")
 	music_player.play()

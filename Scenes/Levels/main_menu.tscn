@@ -27,6 +27,7 @@ p_layer = NodePath("ParallaxBackground/ParallaxLayer")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_knt1k")
+volume_db = -6.411
 autoplay = true
 
 [node name="Label" type="Label" parent="."]
@@ -41,6 +42,7 @@ text = "Alone"
 label_settings = SubResource("LabelSettings_q7tvi")
 
 [node name="Label2" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 489.0
 offset_top = 462.0

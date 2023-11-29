@@ -8,3 +8,6 @@ func _ready():
 
 func interact():
 	interacted_with.emit()
+	
+func fix_sheet():
+	$Sprite2D2.z_index = 0

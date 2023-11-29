@@ -9,6 +9,7 @@ extends Node2D
 func _ready():
 	await get_tree().create_timer(0.5).timeout
 	GameManager.show_dialogue("house_dream_get_away")
+	%Bed.fix_sheet()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -22,6 +23,6 @@ func _on_window_night_interacted():
 	clock.stop()
 	bg_music.stop()
 	await get_tree().create_timer(0.5).timeout
-	AudioManager.play("res://Sounds/windowbreak.wav")
+	AudioManager.play("res://Sounds/windowbreak.wav", -8)
 	await get_tree().create_timer(1).timeout
 	SceneManager.SwitchScene("blackout")

@@ -21,6 +21,6 @@ func _on_body_entered(body):
 	# Teleport the body, if teleportation is enabled
 	if enabled:
 		var teleport_point = teleport_marker.global_position
-		AudioManager.play("res://Sounds/door_enter.wav")
+		AudioManager.play("res://Sounds/door_enter.wav", -14)
 #		body.teleport_to(teleport_point)
 		entered_teleporter.emit(body,teleport_point)

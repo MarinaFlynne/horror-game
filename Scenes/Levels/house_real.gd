@@ -22,6 +22,7 @@ func _ready():
 	await GameManager.dialogue_ended
 	await get_tree().create_timer(1)
 	%Player.global_position = out_of_bed_marker.global_position
+	%Bed.fix_sheet()
 	%Player.enable_movement()
 	bed.set_collision_layer_value(3, true)
 

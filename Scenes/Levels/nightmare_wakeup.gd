@@ -27,6 +27,7 @@ func _ready():
 	GameManager.show_dialogue("nightmare_wakeup_start")
 	await GameManager.dialogue_ended
 	%Player.global_position = out_of_bed_marker.global_position
+	%Bed.fix_sheet()
 	%Player.enable_movement()
 	bed.set_collision_layer_value(3, true)
 
